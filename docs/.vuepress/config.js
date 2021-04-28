@@ -2,6 +2,7 @@ const nav = require("./config/nav/");
 const sidebar = require("./config/sidebar/");
 
 module.exports = {
+  base:'/snote/',
   title: "snote",
   description: "study note",
   dest: "./dist",
