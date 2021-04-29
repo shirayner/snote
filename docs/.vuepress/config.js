@@ -1,8 +1,10 @@
 const nav = require("./config/nav/");
 const sidebar = require("./config/sidebar/");
+const blogConfig = require("./config/blog/");
+const plugins = require("./config/plugins/");
 
 module.exports = {
-  base:'/snote/',
+  base: "/snote/",
   title: "snote",
   description: "study note",
   dest: "./dist",
@@ -13,21 +15,14 @@ module.exports = {
   },
   theme: "reco",
   themeConfig: {
-    //type: "blog",
-    // blogConfig: {
-    //   category: {
-    //     location: 2, // 在导航栏菜单中所占的位置，默认2
-    //     text: "分类", // 默认文案 “分类”
-    //   },
-    //   tag: {
-    //     location: 3, // 在导航栏菜单中所占的位置，默认3
-    //     text: "标签", // 默认文案 “标签”
-    //   },
-    // },
+    blogConfig,
     nav,
     sidebar,
-    subSidebar: 'auto',
-    // sidebarDepth: 1,
-    // displayAllHeaders: false,
+    subSidebar: "auto",
+    lastUpdated: true,
+    lastUpdated: "上次更新",
+    search: true,
+    searchMaxSuggestions: 10,
   },
+  plugins,
 };

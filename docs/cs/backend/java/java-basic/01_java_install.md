@@ -1,8 +1,13 @@
 ---
 title: 01_Jdk安装及环境变量配置
+date:  2021-04-29
+categories:
+ - java
+tags:
+ - java-basic
 ---
 
-[toc]
+[[toc]]
 
 ## 推荐阅读
 
