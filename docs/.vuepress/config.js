@@ -12,6 +12,10 @@ module.exports = {
   head: [["link", { rel: "icon", href: "/img/logo.png" }]],
   markdown: {
     lineNumbers: true,
+    extendMarkdown: md => {
+      md.set({ breaks: true })
+      md.use(require('markdown-it-plantuml'))
+    },
   },
   theme: "reco",
   themeConfig: {
