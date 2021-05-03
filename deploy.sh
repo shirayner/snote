@@ -22,4 +22,7 @@ git commit -m 'deploy'
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 git push -f https://github.com/shirayner/snote.git master:gh-pages
 
+# 如果发布到 https://<USERNAME>.gitee.io/<REPO>
+git push -f https://gitee.com/shirayner/snote.git master:gh-pages
+
 cd -
