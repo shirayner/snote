@@ -65,3 +65,5 @@ yarn-error.log*
 *.njsproj
 *.sln
 
+# vuepress
+.temp/
