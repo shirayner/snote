@@ -13,7 +13,7 @@ module.exports = [
     text: "后端",
     items: [
       { text: "java", link: "/cs/backend/java/java-basic/00_resources" },
-      { text: "maven", link: "/cs/backend/maven/" },
+      { text: "maven", link: "/cs/backend/maven/00_resources" },
     ],
   },
   {

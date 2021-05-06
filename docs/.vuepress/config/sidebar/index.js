@@ -29,7 +29,8 @@ module.exports = {
         "jvm/03_online_troubleshooting",
         "jvm/04_performance_optimization_guide",
       ],
-    }, {
+    },
+    {
       title: "Java并发",
       collapsable: true,
       children: [
@@ -47,5 +48,15 @@ module.exports = {
         "java-concurrency/11_simulate_concurrency",
       ],
     },
+  ],
+  "/cs/backend/maven/": [
+    "00_resources",
+    "01_introduction_and_install",
+    "02_coordinate_and_dependency",
+    "03_repository",
+    "04_lifecycle_and_plugin",
+    "05_aggregation_and_extension",
+    "06_nexus",
+    "07_useful_plugins",
   ],
 };
