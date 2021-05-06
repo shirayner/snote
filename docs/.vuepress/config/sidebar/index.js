@@ -59,4 +59,16 @@ module.exports = {
     "06_nexus",
     "07_useful_plugins",
   ],
+  "/cs/backend/idea/": [
+    "00_resources",
+    "01_install",
+    "02_apply_for_idea_lisence_by_using_open_source_project",
+    "03_config_idea",
+    "04_shortcut_key",
+    "05_solve_chinese_garbled_code",
+    "06_plugins",
+    "07_hot_deploy",
+    "08_excption_list",
+    "09_useful_skils",
+  ],
 };

@@ -14,6 +14,7 @@ module.exports = [
     items: [
       { text: "java", link: "/cs/backend/java/java-basic/00_resources" },
       { text: "maven", link: "/cs/backend/maven/00_resources" },
+      { text: "idea", link: "/cs/backend/idea/00_resources" },
     ],
   },
   {
