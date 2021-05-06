@@ -21,7 +21,13 @@ module.exports = {
     {
       title: "Jvm",
       collapsable: true,
-      children: ["jvm/one", "jvm/two"],
+      children: [
+        "jvm/00_resources",
+        "jvm/01_core_knowledge_diagram",
+        "jvm/02_performance_monitor_and_analysis",
+        "jvm/03_online_troubleshooting",
+        "jvm/04_performance_optimization_guide",
+      ],
     },
   ],
 };
