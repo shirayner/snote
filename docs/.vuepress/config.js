@@ -2,6 +2,7 @@ const nav = require("./config/nav/");
 const sidebar = require("./config/sidebar/");
 const blogConfig = require("./config/blog/");
 const plugins = require("./config/plugins/");
+const markdown = require("./config/markdown/");
 
 module.exports = {
   base: "/snote/",
@@ -10,16 +11,10 @@ module.exports = {
   dest: "./dist",
   port: "8080",
   head: [["link", { rel: "icon", href: "/img/logo.png" }]],
-  markdown: {
-    lineNumbers: true,
-    extendMarkdown: md => {
-      md.set({ breaks: true })
-      md.use(require('markdown-it-plantuml'))
-    },
-  },
+  markdown,
   theme: "reco",
   themeConfig: {
-    type: 'blog',
+    type: "blog",
     blogConfig,
     nav,
     sidebar,
