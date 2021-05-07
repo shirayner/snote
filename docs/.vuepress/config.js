@@ -1,5 +1,4 @@
 const nav = require("./config/nav/");
-const sidebar = require("./config/sidebar/");
 const blogConfig = require("./config/blog/");
 const plugins = require("./config/plugins/");
 const markdown = require("./config/markdown/");
@@ -17,7 +16,6 @@ module.exports = {
     type: "blog",
     blogConfig,
     nav,
-    sidebar,
     subSidebar: "auto",
     lastUpdated: true,
     lastUpdated: "上次更新",

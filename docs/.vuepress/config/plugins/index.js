@@ -46,4 +46,16 @@ module.exports = [
       zIndex: 999999999, // z-index property of the canvas, default: 999999999
     },
   ],
+
+  // 自动生成侧边栏
+  ["vuepress-plugin-auto-sidebar", {}],
+
+  // 支持中文文件名
+  [
+    "permalink-pinyin",
+    {
+      lowercase: true, // Converted into lowercase, default: true
+      separator: "-", // Separator of the slug, default: '-'
+    },
+  ],
 ];
