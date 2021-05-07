@@ -1,5 +1,5 @@
 ---
-title: 04_Idea中文乱码解决
+title: 05_Idea中文乱码解决
 date: 2021-04-29
 categories:
   - idea
@@ -8,6 +8,8 @@ tags:
 ---
 
 [[toc]]
+
+[toc]
 
 ## 前言
 
