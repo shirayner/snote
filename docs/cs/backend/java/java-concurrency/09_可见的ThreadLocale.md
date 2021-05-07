@@ -2,12 +2,14 @@
 title: 09_可见的ThreadLocale
 date: 2021-04-29
 categories:
-  - java
+  - java-concurrency
 tags:
   - java-concurrency
 ---
 
 [[toc]]
+
+[toc]
 
 ## 推荐阅读
 

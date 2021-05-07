@@ -1,13 +1,15 @@
 ---
 title: 07_java8
-date:  2021-04-29
+date: 2021-04-29
 categories:
- - java
+  - java-basic
 tags:
- - java-basic
+  - java-basic
 ---
 
 [[toc]]
+
+[toc]
 
 ## 推荐阅读
 
@@ -26,7 +28,7 @@ tags:
                                             ArrayList::new));
 ```
 
-（2）根据Filed去重
+（2）根据 Filed 去重
 
 ```java
 public class DistinctByKey {
@@ -62,7 +64,7 @@ public class DistinctByKey {
 taskSetList.stream().sort((o1, o2) -> o1.getId() - o2.getId());
 
 taskSetList.stream().sorted(Comparator.comparing(TaskSet::getId).reversed()).findFirst()
-    
+
 securityResourceList.stream().sorted(Comparator.comparing(securityResource -> securityResource.getResourcePath().toLowerCase())).collect(Collectors.toList());
 
 securityResourceList.stream().sorted(Comparator.comparing(SecurityResource::getDatachangeLasttime)).collect(Collectors.toList());
@@ -72,7 +74,7 @@ securityResourceList.stream().sorted(Comparator.comparing(SecurityResource::getD
 
 ```java
 public class Sort {
-    
+
     public List<User> sort(List<User> users){
         return users.stream().sorted((u1, u2) -> u1.getCreatedTime().compareTo(u2.getCreatedTime())).collect(Collectors.toList());
     }
@@ -94,8 +96,8 @@ List<Long> resuourceIds = securityRoleResourceList.stream().map(SecurityRoleReso
 
 将流扁平化
 
-> - [java8中stream的map和flatmap的理解](https://www.cnblogs.com/lijingran/p/8727507.html)
-> - [Java8:如何使用flatMap()](https://www.jianshu.com/p/8d80dcb4e7e0)
+> - [java8 中 stream 的 map 和 flatmap 的理解](https://www.cnblogs.com/lijingran/p/8727507.html)
+> - [Java8:如何使用 flatMap()](https://www.jianshu.com/p/8d80dcb4e7e0)
 
 ```java
             List<Long> bagTaskInfoIdsInTranslatingAndProjectContainTargetLocale = projectRelationList.stream().filter(projectRelation -> {
@@ -112,9 +114,9 @@ List<Long> resuourceIds = securityRoleResourceList.stream().map(SecurityRoleReso
 
 ### 4.分组
 
-> 分组归一化操作都可用 reducing 
+> 分组归一化操作都可用 reducing
 
-#### 4.1分组求最值
+#### 4.1 分组求最值
 
 > [java stream 处理分组后取每组最大](https://blog.csdn.net/kingmax54212008/article/details/102827306)
 

@@ -2,12 +2,14 @@
 title: 01_JVM核心知识点图解
 date: 2021-04-29
 categories:
-  - java
+  - jvm
 tags:
   - jvm
 ---
 
 [[toc]]
+
+[toc]
 
 ## 前言
 
