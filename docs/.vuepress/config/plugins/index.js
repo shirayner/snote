@@ -58,4 +58,16 @@ module.exports = [
       separator: "-", // Separator of the slug, default: '-'
     },
   ],
+
+  // 支持pwa
+  [
+    "@vuepress/pwa",
+    {
+      serviceWorker: true,
+      updatePopup: {
+        message: "发现新内容可用.",
+        buttonText: "刷新"
+      }
+    },
+  ],
 ];
