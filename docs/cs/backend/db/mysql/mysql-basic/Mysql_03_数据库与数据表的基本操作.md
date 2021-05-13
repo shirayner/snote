@@ -10,7 +10,7 @@
 
 # 命令清单
 
-```mysql
+```sql
 -- Database-Level
 create database [if not exists] db_name;   -- Create a new database
 drop database [if exists] db_name;         -- Delete the database (irrecoverable!)
@@ -63,7 +63,7 @@ SELECT * | column1Name AS alias1, ..., columnNName AS aliasN
 
 查看数据库列表：
 
-```mysql
+```sql
 show databases;
 ```
 
@@ -71,7 +71,7 @@ show databases;
 
 USE语句选定一个数据库并把它当做指定MySQL服务器连接上的默认（当前）数据库：
 
-```mysql
+```sql
 use db_name
 ```
 
@@ -81,7 +81,7 @@ use db_name
 
 同时可以通过如下语句查看当前连接的默认数据库：
 
-```mysql
+```sql
 select database();
 ```
 
@@ -89,7 +89,7 @@ select database();
 
 ## 2.创建
 
-```mysql
+```sql
 CREATE  DATABASE  [IF NOT EXISTS] db_name
     [create_specification] ...
 
@@ -102,7 +102,7 @@ create_specification:
 
 在默认情况下，服务器级别的字符集和排序方式将成为新建数据库的默认字符集和排序方式。可以使用CHARACTERSET和COLLATE子句对这些数据库属性作出明确的设置。如下所示：
 
-```mysql
+```sql
 create database mydb character set utf8 collate utf8_icelandic_ci;
 ```
 
@@ -110,7 +110,7 @@ create database mydb character set utf8 collate utf8_icelandic_ci;
 
 查看数据库定义语句：
 
-```mysql
+```sql
 mysql> show create database mysql \g
 +----------+----------------------------------------------------------------+
 | Database | Create Database                                                |
@@ -127,7 +127,7 @@ mysql> show create database mysql \g
 
 ## 3.删除
 
-```mysql
+```sql
 DROP DATABASE  [IF EXISTS] db_name
 ```
 
@@ -137,7 +137,7 @@ DROP DATABASE  [IF EXISTS] db_name
 
 主要是修改数据库的默认字符集和排序方式
 
-```mysql
+```sql
 ALTER DATABASE [db_name]
     alter_specification ...
 
@@ -156,7 +156,7 @@ alter_specification:
 
 使用如下命令可以查看有哪些存储引擎可供选用：
 
-```mysql
+```sql
 mysql> show engines \G
 *************************** 1. row ***************************
       Engine: FEDERATED
@@ -229,7 +229,7 @@ Transactions: NO
 
 其中上述存储引擎信息是存储在 information_schema.engines 数据表中的。
 
-```mysql
+```sql
 show databases;
 use information_schema;
 show tables;
@@ -244,7 +244,7 @@ select * from engines;
 
 ### 2.1 基本建表语句
 
-```mysql
+```sql
 CREATE TABLE [IF NOT EXISTS] tbl_name(
   col_name data_type [NOT NULL | NULL] [DEFAULT {literal | (expr)} ]     
   [AUTO_INCREMENT] [UNIQUE [KEY]] [[PRIMARY] KEY] 
@@ -255,7 +255,7 @@ CREATE TABLE [IF NOT EXISTS] tbl_name(
 
 示例：
 
-```mysql
+```sql
 CREATE TABLE IF NOT EXISTS tasks (
   task_id INT(11) NOT NULL AUTO_INCREMENT,  
   subject VARCHAR(45) DEFAULT NULL,
@@ -294,7 +294,7 @@ IF
 - 字段信息、默认值
 - 约束、索引等
 
-```mysql
+```sql
 CREATE TABLE B LIKE A
 ```
 
@@ -323,7 +323,7 @@ CREATE TABLE B [AS] SELECT * FROM A;
 
 ## 3.删除表
 
-```mysql
+```sql
 mysql> DROP TABLE IF EXISTS t1, t2;
 ```
 
@@ -331,7 +331,7 @@ mysql> DROP TABLE IF EXISTS t1, t2;
 
 ## 4.修改表
 
-```mysql
+```sql
 -- Add a new column to payments table
 ALTER TABLE `payments` ADD COLUMN `staff_id`  INT UNSIGNED  NOT NULL;
 
@@ -343,7 +343,7 @@ ALTER TABLE t2 ADD INDEX (d), ADD UNIQUE (a);
 
 ## 5.查看建表语句
 
-```mysql
+```sql
 mysql> SHOW CREATE TABLE t \G
 *************************** 1. row ***************************
        Table: t
@@ -362,7 +362,7 @@ Create Table: CREATE TABLE `t` (
 
 ## 1.新增
 
-```mysql
+```sql
 -- Row-Level
 INSERT INTO tableName 
    VALUES (column1Value, column2Value,...)               -- Insert on all Columns
@@ -378,7 +378,7 @@ INSERT INTO tableName (column1Name, ..., columnNName)
 
 ## 2.删除
 
-```mysql
+```sql
 DELETE FROM tableName WHERE criteria
 ```
 
@@ -386,7 +386,7 @@ DELETE FROM tableName WHERE criteria
 
 ## 3.修改
 
-```mysql
+```sql
 UPDATE tableName SET columnName = expr, ... WHERE criteria
 ```
 
@@ -396,7 +396,7 @@ UPDATE tableName SET columnName = expr, ... WHERE criteria
 
 查询语句很复杂，这里只列出简单的查询语句
 
-```mysql
+```sql
 select column_list  from table_list  where criteria
 ```
 

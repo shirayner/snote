@@ -594,7 +594,7 @@ public final class SlotChainProvider {
 
 构建器的实现类见`src/main/reosurces/META-INF/services`这个文件夹下的`com.alibaba.csp.sentinel.slotchain.SlotChainBuilder`文件：
 
-```spi
+```java
 # Default slot chain builder
 com.alibaba.csp.sentinel.slots.DefaultSlotChainBuilder
 ```

@@ -19,7 +19,7 @@
 
 ### 1.创建数据表
 
-```mysql
+```sql
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
@@ -37,7 +37,7 @@ CREATE TABLE `user` (
 
 ### 2.添加数据
 
-```mysql
+```sql
 -- 1.创建批量插入数据的存储过程
 DROP PROCEDURE IF exists BatchInsertUser;
 delimiter //
@@ -75,7 +75,7 @@ CALL BatchInsertUser(1, 10000020);
 > - [MySQL 8.0 Reference Manual/.../SELECT Statement](https://dev.mysql.com/doc/refman/8.0/en/select.html)
 > - 
 
-```mysql
+```sql
 SELECT * 
 FROM table 
 [LIMIT {[offset,] row_count | row_count OFFSET offset}]
@@ -101,7 +101,7 @@ FROM table
 
 演示走聚集索引时的分页查询的耗时情况：
 
-```mysql
+```sql
 -- 以下示例的查询耗时取最小值（这里不要求特别精确，按照一个标准取一个大概的值即可）
 
 -- offset=0, cost=1ms
@@ -131,7 +131,7 @@ select * from user order by id limit 10000000,10;
 
 （1）偏移量为 0
 
-```mysql
+```sql
 explain select * from user order by id limit 0,10;  
 ```
 
@@ -141,7 +141,7 @@ explain select * from user order by id limit 0,10;
 
 （2）偏移量为 1,000
 
-```mysql
+```sql
 explain select * from user order by id limit 1000,10;
 ```
 
@@ -151,7 +151,7 @@ explain select * from user order by id limit 1000,10;
 
 （3）偏移量为 10,000
 
-```mysql
+```sql
 explain select * from user order by id limit 10000,10;
 ```
 
@@ -161,7 +161,7 @@ explain select * from user order by id limit 10000,10;
 
 （4）偏移量为 100,000
 
-```mysql
+```sql
 explain select * from user order by id limit 100000,10;
 ```
 
@@ -171,7 +171,7 @@ explain select * from user order by id limit 100000,10;
 
 （5）偏移量为 1,000,000
 
-```mysql
+```sql
 explain select * from user order by id limit 1000000,10;
 ```
 
@@ -231,7 +231,7 @@ explain 执行计划包含的信息如下：
 
 
 
-```mysql
+```sql
 explain select * from user a inner join (select id from user order by id limit 1000000,10) b on a.id = b.id;
 ```
 
@@ -245,7 +245,7 @@ explain select * from user a inner join (select id from user order by id limit 1
 
 
 
-```mysql
+```sql
 -- 优化前：offset=1,000,000, cost=497ms
 select * from user order by id limit 1000000,10;
 
@@ -263,7 +263,7 @@ select * from user a inner join (select id from user order by id limit 1000000,1
 
 局限：只使用于自增主键，对于UUID生成的主键不适用
 
-```mysql
+```sql
 explain select * from user where id > 1000000 order by id desc limit 10;
 ```
 
@@ -275,7 +275,7 @@ explain select * from user where id > 1000000 order by id desc limit 10;
 
 
 
-```mysql
+```sql
 -- 优化前：offset=1,000,000, cost=497ms
 select * from user order by id limit 1000000,10;
 

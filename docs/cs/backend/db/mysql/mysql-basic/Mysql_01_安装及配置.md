@@ -152,7 +152,7 @@ sudo mysql -h hostname -u username -p   # longin on remote server
 
 （3）修改密码
 
-```mysql
+```sql
 mysql> alter user 'root'@'localhost' identified by 'Ray12345.';
 ```
 
@@ -177,7 +177,7 @@ validate_password_policy 有以下取值：
 有时候，只是为了自己测试，不想密码设置得那么复杂，譬如说，我只想设置root的密码为123456。 
 必须修改两个全局参数：
 
-```mysql
+```sql
 -- 1.修改validate_password_policy参数的值
 mysql> set global validate_password_policy=0;
 
@@ -187,7 +187,7 @@ mysql> set global validate_password_length=1;
 
 完成之后再次执行修改密码语句即可成功
 
-```mysql
+```sql
 mysql> alter user 'root'@'localhost' identified by '123456.';
 ```
 
@@ -203,13 +203,13 @@ shell>  mysqladmin -u root password "root";   # 可行
 
 
 
-```mysql
+```sql
 mysql> set password for 'root'@'localhost' =password('root');
 ```
 
 
 
-```mysql
+```sql
 # ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';   # 不可行
 ```
 
@@ -293,7 +293,7 @@ sudo mysql -uroot -p
 
 （2）修改 `'root'@'localhost'` 密码 
 
-```mysql
+```sql
 -- 2.1 更新 mysql 库中 user 表的字段：
 MariaDB [(none)]> use mysql;  
 MariaDB [mysql]> UPDATE user SET password=password('newpassword') WHERE user='root';  
@@ -305,7 +305,7 @@ MariaDB [mysql]> exit;
 
 （3）创建 `'root'@'%'` 用户 
 
-```mysql
+```sql
 MariaDB [(none)]> use mysql;  
 MariaDB [mysql]> UPDATE user SET host='%' WHERE user='root';  
 ```
@@ -417,13 +417,13 @@ flush privileges;
 
 - 方式一
 
-    ```mysql
+    ```sql
     mysql> create user 'username'@'%' identified by 'password';    -- 新建用户
     ```
 
     例如：
 
-    ```mysql
+    ```sql
     mysql> create user 'ray'@'%' identified by 'Ray12345.';    -- 新建用户
     ```
 
@@ -431,7 +431,7 @@ flush privileges;
 
 - 方式二
 
-    ```mysql
+    ```sql
     -- 创建用户并授权
     mysql> grant all  on *.* to 'ray'@'%' identified by 'Ray12345.';   -- 暂时有问题
     mysql> flush privileges;
@@ -443,7 +443,7 @@ flush privileges;
 
 添加一个允许远程连接的帐户
 
-```mysql
+```sql
 mysql> grant all  on *.* to ray@'%';
 mysql> flush privileges;
 ```
@@ -597,7 +597,7 @@ mysql> ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'root';
 
 > 默认会有`'root'@'localhost'`用户，若没有`'root'@'%'` 则自己创建即可
 >
-> ```mysql
+> ```sql
 >  CREATE USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'root';
 > ```
 
@@ -615,7 +615,7 @@ mysql> CREATE USER 'ray'@'%' IDENTIFIED WITH mysql_native_password BY 'ray';
 
 添加一个允许远程连接的帐户
 
-```mysql
+```sql
 mysql> grant all  on *.* to ray@'%';
 mysql> flush privileges;
 ```

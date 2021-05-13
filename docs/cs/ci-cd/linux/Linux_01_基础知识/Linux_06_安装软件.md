@@ -140,7 +140,7 @@ yum deplist package_name
 
 要想知道你现在正从哪些仓库中获取软件，输入如下命令：
 
-```list
+```bash
 yum repolist
 ```
 

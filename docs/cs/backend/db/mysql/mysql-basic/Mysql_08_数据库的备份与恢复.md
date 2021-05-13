@@ -101,7 +101,7 @@
 
 （1）备份数据
 
-```mysql
+```sql
 mysql > use hellodb; --  打开 hellodb 库 
 mysql > select * from students;  -- 查看 students 的属性
 mysql > select * from students where Age > 30 into outfile '/tmp/user.txt';  -- 将年龄大于30的同学的信息备份出来
@@ -122,7 +122,7 @@ shell >  cat stud.txt
 
 >  会发现是个文本文件。所以不能直接导入数据库了。需要使用LOADDATAINFILE恢复回到MySQL服务器端，删除年龄大于30的用户，模拟数据被破坏，
 
-```mysql
+```sql
 mysql > delete from students where Age > 30;
 ```
 
@@ -130,7 +130,7 @@ mysql > delete from students where Age > 30;
 
 （4）恢复数据
 
-```mysql
+```sql
 mysql > load data infile '/tmp/stud.txt' into table students;
 ```
 
@@ -155,7 +155,7 @@ mysqldump常用来做温备，所以首先需要对想备份的数据施加读�
 
 （2）在服务器端书写命令
 
-```mysql
+```sql
 mysql > flush tables with read lock;  -- 施加锁，表示把位于内存上的表统统都同步到磁盘上去，然后施加读锁
 mysql > flush tables with read lock;  -- 释放读
 ```
@@ -164,7 +164,7 @@ mysql > flush tables with read lock;  -- 释放读
 
 因此当面对InnoDB的时候，要使用如下命令，看看InnoDB所有的数据都已经同步到磁盘上，才进行备份操作。
 
-```mysql
+```sql
 mysql >  show engine innodb status;
 ```
 
@@ -190,7 +190,7 @@ shell >  mysqldump -uroot --single-transaction --master-data = 2 --databases hel
 
 （2）回到MySQL服务器端更新数据
 
-```mysql
+```sql
 mysql > create table tb1( id int);  -- 创建表
 mysql > insert into tb1 values( 1),( 2),( 3);   -- 插入数据，这里只做演示，随便插入了几个数
 ```
@@ -236,7 +236,7 @@ shell > cat hellodb_2013-09-08.sql | less
 
 示例1：
 
-```mysql
+```sql
 mysql>  select * from user into outfile '/var/lib/mysql-files/user.txt'; 
 ```
 
@@ -244,7 +244,7 @@ mysql>  select * from user into outfile '/var/lib/mysql-files/user.txt';
 
 示例2:
 
-```mysql
+```sql
 mysql > select * into outfile '/ tmp/ tb1. txt' 
 -> fields terminated by ',' 
 -> optionally enclosed by '"' 
@@ -268,7 +268,7 @@ Query OK, 50 rows affected (0.00 sec)
 
 示例1：
 
-```mysql
+```sql
 mysql>  load data infile '/var/lib/mysql-files/user.txt' into table user;
 ```
 
@@ -299,7 +299,7 @@ LINES TERMINATED BY '\n'
 
 执行 `mysqldump --help` 可查看其用法
 
-```mysql
+```sql
 mysqldump [OPTIONS] database [tables]
 mysqldump [OPTIONS] --databases [OPTIONS] DB1 [DB2 DB3...]
 mysqldump [OPTIONS] --all-databases [OPTIONS]
@@ -405,7 +405,7 @@ mysqldump [OPTIONS] --all-databases [OPTIONS]
 
 例如：
 
-```mysql
+```sql
 mysqldump -uray -p'Ray12345.' --default-character-set=utf8 --opt --extended-insert=false  --triggers -R --hex-blob -x  db_name > db_name.sql
 ```
 
@@ -417,7 +417,7 @@ mysqldump -uray -p'Ray12345.' --default-character-set=utf8 --opt --extended-inse
 
 
 
-```mysql
+```sql
 mysql>  flush tables with read lock;   -- 刷写所有表并施加读锁
 mysql>  flush logs;  -- 加锁之后刷一下日志
 mysql>  show master status;
@@ -431,7 +431,7 @@ mysql>  unlock  tables;   -- 释放锁
 
 **（1）备份 `MyISAM` 表**
 
-```mysql
+```sql
 mysqldump -uray -p'Ray12345.' --default-character-set=utf8 --opt --extended-insert=false  --triggers -R --hex-blob -x  db_name > db_name.sql
 
 -- 即
@@ -446,7 +446,7 @@ shell> mysqldump -uray -p'Ray12345.'
 
 
 
-```mysql
+```sql
 mysqldump -uray -p'Ray12345.' --default-character-set=utf8 --opt --extended-insert=false  --triggers -R --hex-blob --single-transaction  db_name > db_name.sql
 
 -- 即
@@ -459,7 +459,7 @@ shell> mysqldump -uray -p'Ray12345.'
 
 另外，如果想要实现在线备份，还可以使用 `--master-data` 参数来实现，如下：
 
-```mysql
+```sql
 mysqldump -uray -p'Ray12345.'  --default-character-set=utf8 --opt --master-data=1  --single-transaction --flush-logs db_name > db_name.sql
 
 -- 即
@@ -490,7 +490,7 @@ mysql -uray -p'Ray12345.' db_name  <  db_name.sql
 
 其实这不是标准的 SQL 语法，而是 `mysql` 客户端提供的功能，例如：
 
-```mysql
+```sql
 mysql>  source /tmp/db_name.sql;
 ```
 
@@ -546,7 +546,7 @@ shell>  mysqldump -uroot -p --all-database > /tmp/ dumpback/ alldb.sql
 
 - **studymysql.sql**
 
-```mysql
+```sql
 create database if not exists studymysql;
 use studymysql;
 create table if not exists user (
@@ -615,7 +615,7 @@ mysql> show databases;
 
 准备 `studymysql` 数据库： 使用 source 命令运行sql
 
-```mysql
+```sql
 mysql> source /home/ray/dev/mysql/studymysql.sql
 
 Query OK, 1 row affected (0.00 sec)
@@ -693,7 +693,7 @@ mysql> select * from user;  	 -- 查看user 表
 
 查看默认备份目录：
 
-```mysql
+```sql
 mysql>  SELECT @@GLOBAL.secure_file_priv;
 +---------------------------+
 | @@GLOBAL.secure_file_priv |
@@ -707,7 +707,7 @@ mysql>  SELECT @@GLOBAL.secure_file_priv;
 
 备份数据到备份目录中：
 
-```mysql
+```sql
 mysql>  select * from user into outfile '/var/lib/mysql-files/user.txt'; 
 
 -- 将备份文件拷贝到/tmp下，并查看
@@ -721,7 +721,7 @@ shell>  cat  /tmp/user.txt
 
 将数据删掉，来默认真实环境中数据的毁坏
 
-```mysql
+```sql
 delete from user;
 ```
 
@@ -729,7 +729,7 @@ delete from user;
 
 ### 1.3 恢复数据
 
-```mysql
+```sql
 load data infile '/var/lib/mysql-files/user.txt' into table user;
 ```
 
@@ -759,7 +759,7 @@ shell >  mysqldump -uray -p'Ray12345.' --single-transaction --master-data=2 --da
 
 完全备份文件里边记录了二进制日志的位置，查看一下
 
-```mysql
+```sql
 shell > cat studymysql_2019-02-28-12.sql | less 
 
 
@@ -831,13 +831,13 @@ shell>  mysqlbinlog --start-position=5941 --stop-position=6439  /var/lib/mysql/b
 
 自上一次增量备份到目前为止，我们的数据有一些变化
 
-```mysql
+```sql
 insert into tb1 values( 4),( 5),( 6);  -- 模拟变化的数据
 ```
 
 然而，我们对这些变化的数据还未来得及备份，数据就毁坏了
 
-```mysql
+```sql
 drop database studymysql;    -- 删库，模拟数据毁坏
 ```
 
@@ -847,13 +847,13 @@ drop database studymysql;    -- 删库，模拟数据毁坏
 
 查看删库时，二进制日志的位置
 
-```mysql
+```sql
 shell>   mysqlbinlog --start-position=6439  /var/lib/mysql/binlog.000002
 ```
 
 然后导出二进制日志
 
-```mysql
+```sql
 shell>  mysqlbinlog --start-position=5941 --stop-position=6439  /var/lib/mysql/binlog.000002 > /tmp/backup/studymysql.sql
 ```
 
@@ -863,7 +863,7 @@ shell>  mysqlbinlog --start-position=5941 --stop-position=6439  /var/lib/mysql/b
 
 先让mysql 离线
 
-```mysql
+```sql
 mysql> set sql_log_bin=0;   -- 关闭二进制日志
 mysql > flush logs;   -- 刷写日志
 ```

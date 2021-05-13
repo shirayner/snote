@@ -347,7 +347,7 @@ SpringBoot项目启动有如下几种方式
 
 先执行如下命令，编译并打包项目
 
-```./gradlew  build
+```bash
 ./gradlew build
 ```
 

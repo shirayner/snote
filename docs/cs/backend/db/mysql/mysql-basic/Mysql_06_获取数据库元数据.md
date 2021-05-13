@@ -20,7 +20,7 @@ MySQL提供了好几种办法供我们获取关于数据库和数据库里各种
 
 ## 1.数据库级别
 
-```mysql
+```sql
 -- 1.列出服务器所管理的数据库：
 show databases;
 
@@ -32,7 +32,7 @@ show create database db_name;
 
 ## 2.数据表级别
 
-```mysql
+```sql
 -- 1.列出默认数据库或给定数据库里的数据表：
 show tables;   -- SHOW TABLES 语句的输出报告里不包括TEMPORARY数据表。
 show tables from db_name;
@@ -64,7 +64,7 @@ show table status from db_name;
 
 如果你想知道`INFORMATION_SCHEMA`数据库都包含哪些数据表，请使用`SHOW TABLES`命令。
 
-```mysql
+```sql
 show tables in information_schema;
 ```
 

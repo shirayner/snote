@@ -10,7 +10,7 @@
 
 
 
-```mysql
+```sql
 -- 用户管理
 select user,host,password  from mysql.user;  			  -- 查看用户
 create user 'userName'@'host' identified by 'password';   -- 创建用户
@@ -39,7 +39,7 @@ revoke privilege on database.table from userName;  -- 撤销权限
 
 
 
-```mysql
+```sql
 mysql> select user,host,password from mysql.user;
 
 +------+-----------------------+-------------------------------------------+
@@ -75,7 +75,7 @@ user表中host列的值的意义：
 
 
 
-```mysql
+```sql
 create user 'userName'@'host' identified by  'password'; -- 用userName、host、password创建用户  
 create user  userName  identified by  'password';  -- 用userName、password创建用户，默认host为% 
 ```
@@ -84,7 +84,7 @@ create user  userName  identified by  'password';  -- 用userName、password创�
 
 示例：
 
-```mysql
+```sql
  -- 用userName、password创建用户，则默认host为% 
 mysql> create user  test1  identified by  'test1';
 Query OK, 0 rows affected (0.00 sec)
@@ -106,7 +106,7 @@ mysql> select user,host,password from mysql.user;
 
 示例中创建用户的命令等同于：
 
-```mysql
+```sql
 mysql> create user 'test1'@'%' identified by 'test1';  
 ```
 
@@ -114,7 +114,7 @@ mysql> create user 'test1'@'%' identified by 'test1';
 
 ## 3.重命名用户
 
-```mysql
+```sql
 rename user oldName to newName;  	-- 重命名用户
 ```
 
@@ -122,7 +122,7 @@ rename user oldName to newName;  	-- 重命名用户
 
 ## 4.删除用户
 
-```mysql
+```sql
 drop user userName;  -- 删除用户
 ```
 
@@ -132,7 +132,7 @@ drop user userName;  -- 删除用户
 
 可通过如下三种方式修改用户的密码：
 
-```mysql
+```sql
 -- 1. shell命令行中 使用mysqladmin修改密码
 shell> mysqladmin -u root  password "root";
 
@@ -176,7 +176,7 @@ mysql的权限都是记录在相应的数据表中的：
 
 ## 1.查看用户权限
 
-```mysql
+```sql
 show grants for userName;
 ```
 
@@ -184,7 +184,7 @@ show grants for userName;
 
 ## 2.赋予用户权限
 
-```mysql
+```sql
 grant privilege on database.table to userName;
 grant all on *.* to 'system'@'localhost' identified by 'clsn123' with grant option; 
 ```
@@ -193,7 +193,7 @@ grant all on *.* to 'system'@'localhost' identified by 'clsn123' with grant opti
 
 ## 3.撤销用户权限
 
-```mysql
+```sql
 revoke privilege on database.table from userName;
 ```
 
@@ -211,7 +211,7 @@ GRANT和REVOKE可在几个层次上控制访问权限：
 
 
 
-```mysql
+```sql
 grant all on *.* to dba@'%'  -- 整个服务器
 grant select, insert, update, delete  on testdb.* to dba@'%'  -- 整个数据库
 grant select, insert, update, delete  on testdb.user to dba@'%'  -- 特定表
@@ -221,7 +221,7 @@ grant select, insert, update, delete  on testdb.user to dba@'%'  -- 特定表
 
 可以授权的用户权限
 
-```mysql
+```sql
 INSERT,SELECT, UPDATE, DELETE, CREATE, DROP, RELOAD, SHUTDOWN, 
 PROCESS, FILE, REFERENCES, INDEX, ALTER, SHOW DATABASES, SUPER, 
 CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, 

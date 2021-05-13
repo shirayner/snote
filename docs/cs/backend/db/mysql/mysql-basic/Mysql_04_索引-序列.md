@@ -36,7 +36,7 @@ MYSQL目前提供了一下4种索引：
 
 可以在创建表的时候直接指定索引
 
-```mysql
+```sql
 CREATE TABLE tbl_name(  
    col_name column_definition 
    PRIMARY KEY(index_column,...);                -- 指定主键索引
@@ -52,7 +52,7 @@ CREATE TABLE tbl_name(
 
 例如：
 
-```mysql
+```sql
 CREATE TABLE user(  
    id INT NOT NULL,   
    username VARCHAR(16) NOT NULL,  
@@ -64,7 +64,7 @@ CREATE TABLE user(
 
 也可写成
 
-```mysql
+```sql
 CREATE TABLE user(  
    id INT NOT NULL PRIMARY KEY,   
    username VARCHAR(16) NOT NULL UNIQUE,  
@@ -78,7 +78,7 @@ CREATE TABLE user(
 
 ### 2.2 Create Index
 
-```mysql
+```sql
 CREATE INDEX index_name ON tbl_name (index_column,...);               -- 创建普通索引
 CREATE UNIQUE INDEX index_name   ON tbl_name (index_column,...);      -- 创建唯一索引
 CREATE FULLTEXT INDEX index_name ON tbl_name (index_column,...);      -- 创建全文索引
@@ -89,7 +89,7 @@ CREATE SPATIAL INDEX index_name   ON tbl_name (index_column,...);     -- 创建�
 
 ### 2.2  Alter Table
 
-```mysql
+```sql
 ALTER TABLE tbl_name ADD PRIMARY KEY (index_column,...);         -- 添加主键索引
 ALTER TABLE tbl_name ADD INDEX  index_name (index_column,...);   -- 添加普通索引
 ALTER TABLE tbl_name ADD UNIQUE index_name (index_column,...);   -- 添加唯一索引
@@ -101,7 +101,7 @@ ALTER TABLE tbl_name ADD SPATIAL index_name (index_column,...);  -- 添加SPATIA
 
 也可以用同一条Alter添加多条索引
 
-```mysql
+```sql
 ALTER TABLE tbl_name ADD PRIMARY KEY (index_column,...), ADD INDEX  index_name (index_column,...), ADD UNIQUE index_name (index_column,...);
 ```
 
@@ -111,7 +111,7 @@ ALTER TABLE tbl_name ADD PRIMARY KEY (index_column,...), ADD INDEX  index_name (
 
 ### 3.1 Drop Index
 
-```mysql
+```sql
 DROP INDEX index_name ON talbe_name
 ```
 
@@ -119,7 +119,7 @@ DROP INDEX index_name ON talbe_name
 
 ### 3.2 Alter Table
 
-```mysql
+```sql
 ALTER TABLE tbl_name DROP INDEX index_name;
 ALTER TABLE table_name DROP PRIMARY KEY;
 ```

@@ -6,7 +6,7 @@
 
 数据表准备：
 
-```mysql
+```sql
 create table if not exists user (
 	id bigint ( 12 ) not null auto_increment,
 	user_name varchar ( 45 ) not null,
@@ -37,7 +37,7 @@ insert into user (user_name, password,sex,age,city) values ('xiaoming' ,'123','�
 
 # 一、查询语句
 
-```mysql
+```sql
 select  select_list
 [from table_list]
 [where row_constraint]
@@ -51,7 +51,7 @@ select  select_list
 
 ## 1. 基本查询
 
-```mysql
+```sql
 select user_name from user where id = 1;          
 select id,user_name,age from user where id = 1;     -- 查询多个字段
 select * from user where id = 1;                    -- 查询全部字段
@@ -95,7 +95,7 @@ select distinct user_name from user;                -- 查询不同的字段
 
 （1）Like
 
-```mysql
+```sql
 select * from user where user.name like '_a%';  -- 可匹配 jack、cakedsds等
 ```
 
@@ -129,7 +129,7 @@ Where子句中可以使用正则表达式来匹配文本的特殊的串
 
 示例：
 
-```mysql
+```sql
 select * from user where user.age regexp '12|13|14';    -- 匹配 12或13 或14
 select * from user where user.age regexp '[12345]0';    -- 字符集合。匹配所包含的任意一个字符
 select * from user where user.age regexp '[1-5]0';      -- 匹配范围。等价于 ‘[12345]0’
@@ -146,7 +146,7 @@ Mysql允许组合使用多个Where子句，主要通过：and、or
 
 AND：与操作
 
-```mysql
+```sql
 SELECT * FROM products WHERE products.vend_id = 1003 AND products.prod_price <= 10;
 ```
 
@@ -154,7 +154,7 @@ SELECT * FROM products WHERE products.vend_id = 1003 AND products.prod_price <= 
 
 OR：或操作，IN性能比OR好，能使用IN的子句中不使用OR
 
-```mysql
+```sql
 SELECT * FROM products WHERE products.vend_id = 1002 OR products.vend_id = 1003;
 ```
 
@@ -174,7 +174,7 @@ SELECT * FROM products WHERE products.vend_id = 1002 OR products.vend_id = 1003;
 
 - 数据表t1
 
-```mysql
+```sql
 +-----+-----+
 | i1  | c1  |
 +-----+-----+
@@ -188,7 +188,7 @@ SELECT * FROM products WHERE products.vend_id = 1002 OR products.vend_id = 1003;
 
 - 数据表t2
 
-```mysql
+```sql
 +-----+-----+
 | i2  | c2  |
 +-----+-----+
@@ -206,14 +206,14 @@ SELECT * FROM products WHERE products.vend_id = 1002 OR products.vend_id = 1003;
 
 
 
-```mysql 
+```sql 
 select * from t1,t2;
 select * from t1 cross join t2;     -- 两个语句效果等价
 ```
 
 以上两个语句效果相同，查询结果如下：
 
-```mysql
+```sql
 +-----+-----+-----+-----+
 | i1  | c1  | i2  | c2  |
 +-----+-----+-----+-----+
@@ -255,14 +255,14 @@ select * from t1 cross join t2;     -- 两个语句效果等价
 
 示例：
 
-```mysql
+```sql
 select t1.*,t2.* from t1 inner join t2 on t1.i1=t2.i2;
 select t1.*,t2.* from t1，t2 where t1.i1=t2.i2;   -- 两个语句效果等价
 ```
 
 以上两个语句效果相同，查询结果如下：
 
-```mysql
+```sql
 +-----+-----+-----+-----+
 | i1  | c1  | i2  | c2  |
 +-----+-----+-----+-----+
@@ -289,13 +289,13 @@ select t1.*,t2.* from t1，t2 where t1.i1=t2.i2;   -- 两个语句效果等价
 
 示例：
 
-```mysql
+```sql
 select t1.*,t2.* from t1 left [outer] join t2 on t1.i1=t2.i2;
 ```
 
 查询结果如下：
 
-```mysql
+```sql
 +-----+-----+-----+-----+
 | i1  | c1  | i2  | c2  |
 +-----+-----+-----+-----+
@@ -323,13 +323,13 @@ select t1.*,t2.* from t1 left [outer] join t2 on t1.i1=t2.i2;
 
 示例：
 
-```mysql
+```sql
 select t1.*,t2.* from t1 right [outer] join t2 on t1.i1=t2.i2;
 ```
 
 查询结果如下：
 
-```mysql
+```sql
 +-----+-----+-----+-----+
 | i1  | c1  | i2  | c2  |
 +-----+-----+-----+-----+
@@ -353,7 +353,7 @@ select t1.*,t2.* from t1 right [outer] join t2 on t1.i1=t2.i2;
 
 子查询是将一个查询语句嵌套在另一个查询语句中，如:
 
-```mysql
+```sql
 SELECT * FROM t1
   WHERE column1 = (SELECT MAX(column2) FROM t2);
 ```
@@ -366,7 +366,7 @@ SELECT * FROM t1
 
 子查询中常用的操作符有ANY(SOME)、ALL、IN、EXISTS:
 
-```mysql
+```sql
 SELECT s1 FROM t1 WHERE s1 = ANY (SELECT s1 FROM t2);  -- <1>
 SELECT s1 FROM t1 WHERE s1 IN    (SELECT s1 FROM t2);  -- <2>,  <1>和<2> 等价
 
@@ -394,7 +394,7 @@ SELECT DISTINCT store_type FROM stores
 
 
 
-```mysql
+```sql
 -- 以下两句等效
 SELECT * FROM t1
   WHERE (col1,col2) = (SELECT col3, col4 FROM t2 WHERE id = 10);
@@ -413,7 +413,7 @@ SELECT * FROM t1 WHERE column1 = 1 AND column2 = 1;
 
 
 
-```mysql
+```sql
 SELECT * FROM t1
   WHERE column1 = ANY (SELECT column1 FROM t2
                        WHERE t2.column2 = t1.column2);
@@ -423,7 +423,7 @@ SELECT * FROM t1
 
 ### 4.4 合并子查询结果
 
-````mysql
+````sql
 (SELECT a FROM t1 WHERE a=10 AND B=1 ORDER BY a LIMIT 10)
 UNION
 (SELECT a FROM t2 WHERE a=11 AND B=2 ORDER BY a LIMIT 10);
@@ -444,7 +444,7 @@ UNION
 
 查看不同的城市及其个数
 
-```mysql
+```sql
 mysql> select city ,count(*) count_city  from  user group by city;
 
 +----------+------------+
@@ -464,7 +464,7 @@ mysql> select city ,count(*) count_city  from  user group by city;
 
 查询不同城市的男女人数
 
-```mysql
+```sql
 mysql> select city, sex ,count(*) count_city  from  user group by city,sex;
 +----------+-----+------------+
 | city     | sex | count_city |
@@ -507,7 +507,7 @@ mysql> select city ,count(*) count_city  from  user group by city having count_c
 
 
 
-```mysql
+```sql
 mysql> select city ,group_concat(age) from  user group by city;
 +----------+-------------------+
 | city     | group_concat(age) |
@@ -527,7 +527,7 @@ mysql> select city ,group_concat(age) from  user group by city;
 
 
 
-```mysql
+```sql
 mysql> select city ,count(*) count_city  from  user group by city with rollup;
 +----------+------------+
 | city     | count_city |
@@ -553,7 +553,7 @@ mysql> select city ,count(*) count_city  from  user group by city with rollup;
 > - asc :  升序
 > - desc : 降序
 
-```mysql
+```sql
 mysql> select *  from  user order by age ;
 +----+-----------+----------+-----+------+----------+------------+----------+-------------+
 | id | user_name | password | sex | age  | city     | start_date | end_date | description |

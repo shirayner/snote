@@ -153,7 +153,7 @@ VuePress 遵循 **“约定优于配置”** 的原则，推荐的目录结构�
 
 （1）创建一个 `.vuepress` 目录，所有 VuePress 相关的文件都将会被放在这里，你的项目结构可能是这样：
 
-```text
+```bash
 .
 ├─ docs
 │  ├─ README.md
@@ -285,7 +285,7 @@ navbar: false
 
 如果你想为不同的页面组来显示不同的侧边栏，首先，将你的页面文件组织成下述的目录结构：
 
-```text
+```bash
 .
 ├─ README.md
 ├─ contact.md

@@ -69,7 +69,7 @@ MySQL主要提供的整数类型有：TINYINT、SMALLINT、MEDIUMINT、INT（INT
 
 例如：
 
-```mysql
+```sql
 mysql> create table t1(a TINYINT, b SMALLINT, c MEDIUMINT, d INT, e BIGINT, f TINYINT unsigned);  -- 建表
 Query OK, 0 rows affected (0.30 sec)
 
@@ -127,7 +127,7 @@ MySQL中使用浮点数和定点数表示小数。
 
 示例：
 
-```mysql
+```sql
 create table t2(a FLOAT(4,1), b DOUBLE(4,1), c DECIMAL(4,1));
 insert into t2 values(4.23,4.26,4.234);
 ```
@@ -148,7 +148,7 @@ insert into t2 values(4.23,4.26,4.234);
 
 示例：
 
-```mysql
+```sql
 create table t3( a YEAR);
 insert into t3 values( 2015),(' 2015');
 mysql> select * from t3;
