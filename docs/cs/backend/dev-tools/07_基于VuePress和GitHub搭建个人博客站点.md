@@ -633,7 +633,7 @@ GITHUB_TOKEN
 
 （1） 异常信息
 
-```log
+```bash
 RangeError: Maximum call stack size exceeded
 ```
 

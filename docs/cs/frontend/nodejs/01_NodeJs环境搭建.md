@@ -30,7 +30,7 @@
 
 在nvm的安装目录下，找到 `settings.txt`，追加如下内容：
 
-```pro
+ ```properties
 node_mirror: https://npm.taobao.org/mirrors/node/
 npm_mirror: https://npm.taobao.org/mirrors/npm/
 ```

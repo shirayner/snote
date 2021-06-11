@@ -1,96 +1,62 @@
 [TOC]
 
-
-
-
-
 # 一、前言
 
-上一节我们简单了解 SpringMVC 架构，这一节我们围绕前端控制器 DispatcherServlet 来详细分析一下SpringMVC启动流程。
-
-
-
-
+上一节我们简单了解 SpringMVC 架构，这一节我们围绕前端控制器 DispatcherServlet 来详细分析一下 SpringMVC 启动流程。
 
 # 二、DispatcherServlet 分析
 
-## 1.SpringMVC组件
+## 1.SpringMVC 组件
 
-
-
-![img](./images/SpringMVC%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
-
-
+![img](./images/spring-mvc-process.png)
 
 SpringMVC 核心组件
 
-| 组件 Bean 类型                        | 说明                                                         |
-| ------------------------------------- | ------------------------------------------------------------ |
-| HandlerMapping                        | 映射请求（Request）到处理器（Handler）加上其关联的拦截器 （HandlerInterceptor）列表，其映射关系基于不同的 HandlerMapping 实现的一些 标准细节。其中两种主要 HandlerMapping 实现， RequestMappingHandlerMapping 支持标注 @RequestMapping 的方法， SimpleUrlHandlerMapping 维护精确的URI 路径与处理器的映射 |
-| HandlerAdapter                        | 帮助 DispatcherServlet 调用请求处理器（Handler），无需关注其中实际的调用 细节。比如，调用注解实现的 Controller 需要解析其关联的注解. HandlerAdapter 的主要目的是为了屏蔽与 DispatcherServlet 之间的诸多细节。 |
-| HandlerExceptionResolver              | 解析异常，可能策略是将异常处理映射到其他处理器（Handlers） 、或到某个 HTML 错误页面，或者其他。 |
-| ViewResolver                          | 从处理器（Handler）返回字符类型的逻辑视图名称解析出实际的 View 对象，该对 象将渲染后的内容输出到HTTP 响应中。 |
-| LocaleResolver, LocaleContextResolver | 从客户端解析出 Locale ，为其实现国际化视图。                 |
-| MultipartResolver                     | 解析多部分请求（如 Web 浏览器文件上传）的抽象实现            |
-
-
+| 组件 Bean 类型                        | 说明                                                                                                                                                                                                                                                                                                      |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| HandlerMapping                        | 映射请求（Request）到处理器（Handler）加上其关联的拦截器 （HandlerInterceptor）列表，其映射关系基于不同的 HandlerMapping 实现的一些 标准细节。其中两种主要 HandlerMapping 实现， RequestMappingHandlerMapping 支持标注 @RequestMapping 的方法， SimpleUrlHandlerMapping 维护精确的 URI 路径与处理器的映射 |
+| HandlerAdapter                        | 帮助 DispatcherServlet 调用请求处理器（Handler），无需关注其中实际的调用 细节。比如，调用注解实现的 Controller 需要解析其关联的注解. HandlerAdapter 的主要目的是为了屏蔽与 DispatcherServlet 之间的诸多细节。                                                                                             |
+| HandlerExceptionResolver              | 解析异常，可能策略是将异常处理映射到其他处理器（Handlers） 、或到某个 HTML 错误页面，或者其他。                                                                                                                                                                                                           |
+| ViewResolver                          | 从处理器（Handler）返回字符类型的逻辑视图名称解析出实际的 View 对象，该对 象将渲染后的内容输出到 HTTP 响应中。                                                                                                                                                                                            |
+| LocaleResolver, LocaleContextResolver | 从客户端解析出 Locale ，为其实现国际化视图。                                                                                                                                                                                                                                                              |
+| MultipartResolver                     | 解析多部分请求（如 Web 浏览器文件上传）的抽象实现                                                                                                                                                                                                                                                         |
 
 ## 2.类图
 
-DispatcherServlet类图如下
+DispatcherServlet 类图如下
 
 ![1544771516166](./images/1544771516166.png)
 
-
-
-
-
-> - `HttpServletBean` :  设置Environment 、设置 init-param
+> - `HttpServletBean` : 设置 Environment 、设置 init-param
 >
->     - 扩展自 `HttpServlet` 	: 因此具备Servlet功能。
->     - 扩展自 `EnvironmentAware` ：因此能得到 Spring 通知的 Environment 
->     - 扩展自`EnvironmentCapable`：因此能包含和暴露  Environment 引用
+>   - 扩展自 `HttpServlet` : 因此具备 Servlet 功能。
+>   - 扩展自 `EnvironmentAware` ：因此能得到 Spring 通知的 Environment
+>   - 扩展自`EnvironmentCapable`：因此能包含和暴露 Environment 引用
 >
-> - `FrameworkServlet` : 初始化 `WebApplicationContext` 
+> - `FrameworkServlet` : 初始化 `WebApplicationContext`
 >
->     - 扩展自`HttpServletBean` ，实现其`initServletBean`方法
->     - 扩展自 `ApplicationContextAware` : 因此能得到Spring 通知的  ApplicationContext
+>   - 扩展自`HttpServletBean` ，实现其`initServletBean`方法
+>   - 扩展自 `ApplicationContextAware` : 因此能得到 Spring 通知的 ApplicationContext
 >
 > - `DispatcherServlet` : 初始化 `strategy`对象。
 >
->     - 扩展自`FrameworkServlet`  ，实现其 `onRefresh` 方法，在 `WebApplicationContext`  刷新之后，初始化 DispatcherServlet 要用到的 `strategy`对象（即SpringMVC相应组件）。
-
-
-
-
+>   - 扩展自`FrameworkServlet` ，实现其 `onRefresh` 方法，在 `WebApplicationContext` 刷新之后，初始化 DispatcherServlet 要用到的 `strategy`对象（即 SpringMVC 相应组件）。
 
 # 三、DispatcherServlet 启动流程
 
 ## 1.流程图
 
-
-
-
-
-
-
 ## 2.时序图
 
-> [01-SpringMVC启动流程](https://www.processon.com/view/5c1761e7e4b0b71ee4fd3e05)
+> [01-SpringMVC 启动流程](https://www.processon.com/view/5c1761e7e4b0b71ee4fd3e05)
 
-
-
-![](./images/01-SpringMVC启动流程.png)
-
-
+![Spring Mvc启动流程](./images/spring-mvc-start-process.png)
 
 ## 3.流程详解
 
 下面我们开始对着上面的时序图的每个流程进行详细的分析。
 
-**建议读者自己按照上面的时序图进行debug断点调试，并自行验证下面分析。**
-
-
+**建议读者自己按照上面的时序图进行 debug 断点调试，并自行验证下面分析。**
 
 ### 3.0 类加载过程
 
@@ -116,9 +82,7 @@ DispatcherServlet类图如下
     }
 ```
 
- 
-
-在 `DispatcherServlet` 类加载阶段，会执行到其静态代码块，此静态代码块的主要目的是从类路径下的`DispatcherServlet.properties` 配置文件中加载默认的 strategy实现，然后存到`defaultStrategies`变量中，以待后续使用。
+在 `DispatcherServlet` 类加载阶段，会执行到其静态代码块，此静态代码块的主要目的是从类路径下的`DispatcherServlet.properties` 配置文件中加载默认的 strategy 实现，然后存到`defaultStrategies`变量中，以待后续使用。
 
 `DispatcherServlet.properties` 文件位置如下图所示：
 
@@ -153,19 +117,11 @@ org.springframework.web.servlet.ViewResolver=org.springframework.web.servlet.vie
 org.springframework.web.servlet.FlashMapManager=org.springframework.web.servlet.support.SessionFlashMapManager
 ```
 
-
-
-此配置文件主要是为 `DispatcherServlet`  的 strategy 接口定义一些默认实现。后面会根据此配置实例化其默认实现，并放到bean容器中。
-
-
-
-
+此配置文件主要是为 `DispatcherServlet` 的 strategy 接口定义一些默认实现。后面会根据此配置实例化其默认实现，并放到 bean 容器中。
 
 ### 3.1 init
 
-类加载之后，在`DispatcherServlet `初始化的时候，会执行`HttpServlet` 的 init 方法，此方法会在servlet初始化时执行，并且一生只执行一次。
-
-
+类加载之后，在`DispatcherServlet`初始化的时候，会执行`HttpServlet` 的 init 方法，此方法会在 servlet 初始化时执行，并且一生只执行一次。
 
 - HttpServletBean
 
@@ -215,20 +171,12 @@ public final void init() throws ServletException {
 }
 ```
 
-
-
 如代码注释所示，此类主要做了如下操作：
 
-- 设置  init-param 参数（即web.xml中的<init-param/> 配置的参数）
+- 设置 init-param 参数（即 web.xml 中的<init-param/> 配置的参数）
 - `initServletBean` 空方法，由子类实现 Servlet 具体初始化操作
 
-
-
-
-
 ### 3.2 initServletBean
-
-
 
 - FrameworkServlet
 
@@ -239,23 +187,15 @@ public final void init() throws ServletException {
 			...
 ```
 
-
-
 如上，此方法中主要有两个操作：
 
 （1）初始化 `WebApplicationContext`
 
-（2）初始化 FrameworkServlet，此方法留给子类做一些额外扩展，是一个空方法，DispatcherServlet暂未覆盖此方法。
+（2）初始化 FrameworkServlet，此方法留给子类做一些额外扩展，是一个空方法，DispatcherServlet 暂未覆盖此方法。
 
+### 3.3 initWebApplicationContext
 
-
-
-
-###  3.3 initWebApplicationContext
-
-此类的主要任务就是初始化  `WebApplicationContext`  并发布刷新事件。
-
-
+此类的主要任务就是初始化 `WebApplicationContext` 并发布刷新事件。
 
 ```java
 	/**
@@ -272,17 +212,17 @@ public final void init() throws ServletException {
 		WebApplicationContext rootContext =
 				WebApplicationContextUtils.getWebApplicationContext(getServletContext());
 		WebApplicationContext wac = null;
-        
-        
+
+
         // 第一种情况，若Spring成功地使用 构造器注入了 webApplicationContext 实例，则直接使用
 		if (this.webApplicationContext != null) {
 			// A context instance was injected at construction time -> use it
 			wac = this.webApplicationContext;
-            
+
             // 如果是 ConfigurableWebApplicationContext 类型，并且未激活，则进行初始化
 			if (wac instanceof ConfigurableWebApplicationContext) {
 				ConfigurableWebApplicationContext cwac = (ConfigurableWebApplicationContext) wac;
-                
+
 				if (!cwac.isActive()) {  // 未激活
 					// The context has not yet been refreshed -> provide services such as
 					// setting the parent context, setting the application context id, etc
@@ -292,14 +232,14 @@ public final void init() throws ServletException {
                         //设置父级上下文
 						cwac.setParent(rootContext);
 					}
-                    
+
                     // 配置 WebApplicationContex 并发布刷新事件
 					configureAndRefreshWebApplicationContext(cwac);
 				}
 			}
 		}
-        
-        
+
+
         // 第二种情况，从 ServletContext 获取对应的 WebApplicationContext 对象
 		if (wac == null) {
 			// No context instance was injected at construction time -> see if one
@@ -308,14 +248,14 @@ public final void init() throws ServletException {
 			// user has performed any initialization such as setting the context id
 			wac = findWebApplicationContext();
 		}
-        
-        
+
+
         // 第三种，创建一个 WebApplicationContext 对象
 		if (wac == null) {
 			// No context instance is defined for this servlet -> create a local one
 			wac = createWebApplicationContext(rootContext);
 		}
-        
+
 
         // <3> 如果未触发刷新事件，则主动触发刷新事件
 		if (!this.refreshEventReceived) {
@@ -324,8 +264,8 @@ public final void init() throws ServletException {
 			// refreshed -> trigger initial onRefresh manually here.
 			onRefresh(wac);
 		}
-        
-        
+
+
 
         // <4> 将 WebApplicationContext 设置到 ServletContext 中
 		if (this.publishContext) {
@@ -342,29 +282,23 @@ public final void init() throws ServletException {
 	}
 ```
 
+- `WebApplicationContext` 的初始化有三种方式：
 
-
-- `WebApplicationContext`  的初始化有三种方式：
-
-> （1）由Spring注入 
+> （1）由 Spring 注入
 >
-> （2）从ServletContext中获取
+> （2）从 ServletContext 中获取
 >
 > （3）创建一个
-
-
 
 - 刷新事件的触发
 
 > （1）无论是以哪种方式创建都要主动触发刷新事件，并将 WebApplicationContext 设置到 ServletContext 中(见<4>)。
 >
-> （2）第一种方式，若上下文类型为 ConfigurableWebApplicationContext 类型，并且未激活，则在configureAndRefreshWebApplicationContext 发布刷新事件，否则由<3>处确保触发刷新事件。
+> （2）第一种方式，若上下文类型为 ConfigurableWebApplicationContext 类型，并且未激活，则在 configureAndRefreshWebApplicationContext 发布刷新事件，否则由<3>处确保触发刷新事件。
 >
 > 第二种方式，由<3>处确保主动触发刷新事件
 >
 > 第三种方式，在 configureAndRefreshWebApplicationContext 发布刷新事件。
-
-
 
 ### 3.4 configureAndRefreshWebApplicationContext
 
@@ -386,15 +320,15 @@ protected void configureAndRefreshWebApplicationContext(ConfigurableWebApplicati
 		wac.setServletContext(getServletContext());
 		wac.setServletConfig(getServletConfig());
 		wac.setNamespace(getNamespace());
-		
+
 		//<1> 添加 ContextRefreshListener 监听器 监听上下文刷新事件
 		wac.addApplicationListener(new SourceFilteringListener(wac, new ContextRefreshListener()));
 
 		// The wac environment's #initPropertySources will be called in any case when the context
 		// is refreshed; do it eagerly here to ensure servlet property sources are in place for
 		// use in any post-processing or initialization that occurs below prior to #refresh
-    
-     
+
+
 		ConfigurableEnvironment env = wac.getEnvironment();
 		if (env instanceof ConfigurableWebEnvironment) {
 			((ConfigurableWebEnvironment) env).initPropertySources(getServletContext(), getServletConfig());
@@ -402,20 +336,16 @@ protected void configureAndRefreshWebApplicationContext(ConfigurableWebApplicati
 
         //<2>空方法占位。留给子类实现，来进行上下文初始化后的一些增强处理。
 		postProcessWebApplicationContext(wac);
-    
+
         //<3>执行自定义初始化器
 		applyInitializers(wac);
-        
+
         //<4> 刷新上下文，会触发上下文刷新事件，然后 ContextRefreshListener 能监听到此事件
 		wac.refresh();
 	}
 ```
 
-
-
 此方法中需要注意的是 <1> 、<4>处：
-
-
 
 #### 3.4.1 SourceFilteringListener
 
@@ -516,20 +446,14 @@ public class SourceFilteringListener implements GenericApplicationListener, Smar
 }
 ```
 
-
-
-对应事件触发时，会执行到 Spring监听器 `#onApplicationEvent(ApplicationEvent event)` 方法中，可以在此方法中处理事件：
+对应事件触发时，会执行到 Spring 监听器 `#onApplicationEvent(ApplicationEvent event)` 方法中，可以在此方法中处理事件：
 
 - 判断事件源是否是前面设置的 source
 - 若是，则调用 `#onApplicationEventInternal(ApplicationEvent event)` 方法，将事件转发给 `delegate` 监听器（也就是 `ContextRefreshListener`）。
 
-
-
-
-
 #### 3.4.2 ContextRefreshListener
 
-<1>处添加的ContextRefreshListener，是一个上下文刷新事件监听器，事件是由 `SourceFilteringListener` 转发而来，此监听器是 `FrameworkServlet` 的一个内部类 ，代码如下：
+<1>处添加的 ContextRefreshListener，是一个上下文刷新事件监听器，事件是由 `SourceFilteringListener` 转发而来，此监听器是 `FrameworkServlet` 的一个内部类 ，代码如下：
 
 ```java
 /**
@@ -544,8 +468,6 @@ private class ContextRefreshListener implements ApplicationListener<ContextRefre
    }
 }
 ```
-
-
 
 此处调用 `FrameworkServlet` 的 `onApplicationEvent`方法，在此方法中调用 `onRefresh` 方法，代码如下：
 
@@ -562,8 +484,6 @@ public void onApplicationEvent(ContextRefreshedEvent event) {
 }
 ```
 
-
-
 onRefresh 方法主要调用 initStrategies 来初始化 Strategies 对象。
 
 ```java
@@ -576,30 +496,20 @@ protected void onRefresh(ApplicationContext context) {
 }
 ```
 
-
-
 #### 3.4.3 事件传递小结
 
 （1）登场角色：
 
-- 事件源：`ConfigurableWebApplicationContext` 
+- 事件源：`ConfigurableWebApplicationContext`
 - 事件：`ContextRefreshedEvent`
 - 事件监听器：`SourceFilteringListener` ，需要绑定到指定的事件源上，是一个中转监听器，会将事件转发到代理监听器
 - 代理监听器：`ContextRefreshListener`
 
-
-
 （2）事件传递过程：
 
--  `ConfigurableWebApplicationContext` 刷新上下文，产生上下文刷新事件 `ContextRefreshedEvent`
+- `ConfigurableWebApplicationContext` 刷新上下文，产生上下文刷新事件 `ContextRefreshedEvent`
 - `SourceFilteringListener` 监听到上下文刷新事件，并转发到 `ContextRefreshListener`
-- `ContextRefreshListener`  处理事件，主要是调用 `FrameworkServlet` 的 `onRefresh`方法来初始化 Strategies 对象
-
-
-
-
-
-
+- `ContextRefreshListener` 处理事件，主要是调用 `FrameworkServlet` 的 `onRefresh`方法来初始化 Strategies 对象
 
 ### 3.5 initStrategies
 
@@ -621,11 +531,7 @@ protected void initStrategies(ApplicationContext context) {
 }
 ```
 
-
-
 #### 3.5.1 initHandlerMappings
-
-
 
 ```java
 /**
@@ -648,7 +554,7 @@ private void initHandlerMappings(ApplicationContext context) {
    if (this.detectAllHandlerMappings) {
       //<1> Find all HandlerMappings in the ApplicationContext, including ancestor contexts.
       Map<String, HandlerMapping> matchingBeans =
-            BeanFactoryUtils.beansOfTypeIncludingAncestors(context, HandlerMapping.class, true, false); 
+            BeanFactoryUtils.beansOfTypeIncludingAncestors(context, HandlerMapping.class, true, false);
       if (!matchingBeans.isEmpty()) {
          this.handlerMappings = new ArrayList<>(matchingBeans.values());
          //<2> We keep HandlerMappings in sorted order.
@@ -681,23 +587,17 @@ private void initHandlerMappings(ApplicationContext context) {
 
 （1）HandlerMapping 的初始化逻辑如下：
 
-- 若 detectAllHandlerMappings 为true
-    - （1）在上下文中查找所有 HandlerMappings 实例，包括根上下文
-    - （2）对 HandlerMappings 实例进行排序
-- 若 detectAllHandlerMappings 为false，则只在当前上下文中查找 handlerMapping 这个 bean
-- 若经过前面的处理还是无法获取HandlerMapping对象，则加载默认的 HandlerMapping
+- 若 detectAllHandlerMappings 为 true
+  - （1）在上下文中查找所有 HandlerMappings 实例，包括根上下文
+  - （2）对 HandlerMappings 实例进行排序
+- 若 detectAllHandlerMappings 为 false，则只在当前上下文中查找 handlerMapping 这个 bean
+- 若经过前面的处理还是无法获取 HandlerMapping 对象，则加载默认的 HandlerMapping
 
+（2）同时注意 <1> 处的 `BeanFactoryUtils.beansOfTypeIncludingAncestors` 方法。
 
+注意第一个参数是`ListableBeanFactory` 接口，对于这个接口的实现类来说，它可以枚举出所有定义的 bean 实例，而不是仅仅可以通过 bean 名称去获得定义的 bean 实例。
 
-
-
-（2）同时注意 <1> 处的 `BeanFactoryUtils.beansOfTypeIncludingAncestors`  方法。
-
-注意第一个参数是`ListableBeanFactory` 接口，对于这个接口的实现类来说，它可以枚举出所有定义的bean实例，而不是仅仅可以通过bean名称去获得定义的bean实例。
-
->  **这方法有点复杂，好像被代理了，执行完本方法之后，还要执行其他操作来获取bean**
-
-
+> **这方法有点复杂，好像被代理了，执行完本方法之后，还要执行其他操作来获取 bean**
 
 ```java
 public static <T> Map<String, T> beansOfTypeIncludingAncestors(
@@ -708,8 +608,8 @@ public static <T> Map<String, T> beansOfTypeIncludingAncestors(
    Map<String, T> result = new LinkedHashMap<>(4);
    //枚举出所有定义的bean
    result.putAll(lbf.getBeansOfType(type, includeNonSingletons, allowEagerInit));
-   
-  
+
+
    if (lbf instanceof HierarchicalBeanFactory) {
       HierarchicalBeanFactory hbf = (HierarchicalBeanFactory) lbf;
         //对于 HierarchicalBeanFactory类型，若父类Bean工厂是ListableBeanFactory，则去找父类Bean工厂中的HandlerMapping
@@ -726,10 +626,6 @@ public static <T> Map<String, T> beansOfTypeIncludingAncestors(
    return result;
 }
 ```
-
-
-
-
 
 （3）<4>处，获取 `DispatcherServlet.properties` 文件中 `HandlerMapping` 对应的实现类。
 
@@ -777,8 +673,6 @@ protected <T> List<T> getDefaultStrategies(ApplicationContext context, Class<T> 
 }
 ```
 
-
-
 #### 3.5.2 initHandlerAdapters
 
 具体过程同 initHandlerMappings
@@ -823,27 +717,19 @@ private void initHandlerAdapters(ApplicationContext context) {
 }
 ```
 
-
-
 #### 3.5.3 initHandlerExceptionResolvers
 
 逻辑同上。
 
 可以实现 HandlerExceptionResolver 接口，来进行统一异常处理。
 
-
-
 这里是初始化 HandlerExceptionResolver 的实例：
 
--  ExceptionHandlerExceptionResolver
+- ExceptionHandlerExceptionResolver
 - ResponseStatusExceptionResolver
 - DefaultHandlerExceptionResolver
 
 这些异常处理器主要进行一些简单的异常处理。
-
-
-
-
 
 #### 3.5.4 initViewResolvers
 
@@ -851,19 +737,10 @@ private void initHandlerAdapters(ApplicationContext context) {
 
 你可以实现`ViewResolver` 接口来定义自己的解析视图的方法。如果你并没有指定自己的类，那么默认的类为 `InternalResourceViewResolver`。
 
-
-
-
-
-
-
-
-
 # 参考资料
 
-1. [SpringMVC源码分析系列](https://www.cnblogs.com/fangjian0423/p/springMVC-directory-summary.html)
-2. [Spring MVC源码剖析](https://hanxlinsist.github.io/Spring-MVC%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/)
+1. [SpringMVC 源码分析系列](https://www.cnblogs.com/fangjian0423/p/springMVC-directory-summary.html)
+2. [Spring MVC 源码剖析](https://hanxlinsist.github.io/Spring-MVC%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/)
 3. [精尽 Spring MVC 源码分析—芋道源码](http://svip.iocoder.cn/categories/Spring-MVC/)
-4. [SpringMVC源码分析系列(精简)](https://juejin.im/post/5aaf4c556fb9a028b547af83)
+4. [SpringMVC 源码分析系列(精简)](https://juejin.im/post/5aaf4c556fb9a028b547af83)
 5. [fangjian0423/springmvc-source-minibook](https://github.com/fangjian0423/springmvc-source-minibook)
-
