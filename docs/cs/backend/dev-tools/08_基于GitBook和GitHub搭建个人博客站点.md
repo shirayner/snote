@@ -1,32 +1,30 @@
-# 基于GitBook和GitHub搭建个人博客站点
+---
+title: 08_基于GitBook和GitHub搭建个人博客站点
+date: 2021-04-29
+categories:
+  - dev-tools
+tags:
+  - dev-tools
+---
+
+[[toc]]
 
 [toc]
-
-
-
-
-
-
 
 ## 推荐阅读
 
 > - [GitBook 简明教程](https://www.chengweiyang.cn/gitbook/index.html)
 > - [GitHub Pages 使用入门](https://docs.github.com/cn/pages/getting-started-with-github-pages)
-> - 
-
-
 
 ## 一、快速入门
 
 ### 1. 安装 gitboot
 
-安装好nodeJs 后，直接使用如下命令安装 gitbook
+安装好 nodeJs 后，直接使用如下命令安装 gitbook
 
 ```bash
-$ npm install -g gitbook-cli
+npm install -g gitbook-cli
 ```
-
-
 
 ### 2.初始化书籍目录
 
@@ -41,12 +39,10 @@ book/
 └── SUMMARY.md
 ```
 
-
-
 README.md 和 SUMMARY.md 是两个必须文件，README.md 是对书籍的简单介绍：
 
 ```bash
-$ cat book/README.md 
+$ cat book/README.md
 # README
 
 This is a book powered by [GitBook](https://github.com/GitbookIO/gitbook).
@@ -55,7 +51,7 @@ This is a book powered by [GitBook](https://github.com/GitbookIO/gitbook).
 SUMMARY.md 是书籍的目录结构。内容如下：
 
 ```bash
-$ cat book/SUMMARY.md 
+$ cat book/SUMMARY.md
 # SUMMARY
 
 * [Chapter1](chapter1/README.md)
@@ -63,8 +59,6 @@ $ cat book/SUMMARY.md
   * [Section1.2](chapter1/section1.2.md)
 * [Chapter2](chapter2/README.md)
 ```
-
-
 
 （2）使用 `gitbook init`，它会为我们创建 SUMMARY.md 中的目录结构。
 
@@ -84,8 +78,6 @@ $ tree
 
 2 directories, 6 files
 ```
-
-
 
 ### 3.编译和预览书籍
 
@@ -109,13 +101,8 @@ Serving book on http://localhost:4000
 
 ![gitbook](./images/gitbook-sample.png)
 
-
-
 ### 3. gitbook editor
 
 从 gitbook editor 下载本地编辑器
 
-> https://github.com/GitbookIO/editor-legacy
-
-
-
+> [https://github.com/GitbookIO/editor-legacy](https://github.com/GitbookIO/editor-legacy)
