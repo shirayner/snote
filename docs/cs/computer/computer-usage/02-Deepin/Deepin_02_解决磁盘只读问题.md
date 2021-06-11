@@ -22,18 +22,18 @@
 
 > 接着，我用C盘覆盖安装了Deepin15.11系统，装好后系统盘符为一个系统 盘，两个本地磁盘
 >
-> ![img ](images/forum.php)
+> ![img ](./images/forum.php)
 >
 > 
 >
-> ![img](images/forum-1567858255097.php)
+> ![img](./images/forum-1567858255097.php)
 
 
 
 (3) 出现磁盘只读问题
 
 >  我在doc盘中创建一个文件时，报出只读文件系统的错误
-> ![img](images/forum-1567858294422.php)
+> ![img](./images/forum-1567858294422.php)
 >
 > 意思就是，这两个本地磁盘我都用不了，只能读，不能写
 

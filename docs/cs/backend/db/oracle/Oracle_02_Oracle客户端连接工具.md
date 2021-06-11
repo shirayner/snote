@@ -33,7 +33,7 @@
 
 
 
-![1560941868786](images/1560941868786.png)
+![1560941868786](./images/1560941868786.png)
 
 
 
@@ -57,7 +57,7 @@ OCI libraray = C:\dev-env\PlsqlDeveloper\instantclient_19_3\oci.dll
 
 如下图所示：
 
-![1560942324111](images/1560942324111.png)
+![1560942324111](./images/1560942324111.png)
 
 
 
@@ -93,7 +93,7 @@ zyj-hec =
 
 此时运行 plsql developer ，发现此时Database可以选择`zyj-hec`，也即在`tnsnames.ora`中定义的连接名，然后使用数据库用户名密码登录即可：
 
-![1560943324329](images/1560943324329.png)
+![1560943324329](./images/1560943324329.png)
 
 
 

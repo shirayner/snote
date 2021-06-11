@@ -18,7 +18,7 @@
 
 
 
-![img](images/SpringMVC%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
+![img](./images/SpringMVC%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
 
 
 
@@ -39,7 +39,7 @@ SpringMVC 核心组件
 
 DispatcherServlet类图如下
 
-![1544771516166](images/1544771516166.png)
+![1544771516166](./images/1544771516166.png)
 
 
 
@@ -80,7 +80,7 @@ DispatcherServlet类图如下
 
 
 
-![](images/01-SpringMVC启动流程.png)
+![](./images/01-SpringMVC启动流程.png)
 
 
 
@@ -122,7 +122,7 @@ DispatcherServlet类图如下
 
 `DispatcherServlet.properties` 文件位置如下图所示：
 
-![1545101541716](images/1545101541716.png)
+![1545101541716](./images/1545101541716.png)
 
 文件内容如下：
 

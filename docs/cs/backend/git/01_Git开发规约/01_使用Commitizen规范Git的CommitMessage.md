@@ -51,7 +51,7 @@ npm install -g commitizen cz-conventional-changelog
 
 当需要用到`git commit`命令时，一律改为使用`git cz`，这时会出现以下选项：
 
-![image-20200518233007244](images/image-20200518233007244.png)
+![image-20200518233007244](./images/image-20200518233007244.png)
 
 
 

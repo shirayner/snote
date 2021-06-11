@@ -40,7 +40,7 @@
 
 
 
-![1552975872645](images/1552975872645.png)
+![1552975872645](./images/1552975872645.png)
 
 
 
@@ -50,7 +50,7 @@
 
 
 
-![1552976012621](images/1552976012621.png)
+![1552976012621](./images/1552976012621.png)
 
 
 
@@ -58,7 +58,7 @@
 
 
 
-![1552976163308](images/1552976163308.png)
+![1552976163308](./images/1552976163308.png)
 
 
 
@@ -72,7 +72,7 @@
 
 
 
-![1552976894057](images/1552976894057.png)
+![1552976894057](./images/1552976894057.png)
 
 
 
@@ -115,7 +115,7 @@ Eshell V10.3  (abort with ^G)
 
 （1）前往 RabbitMQ 官网下载页（https://www.rabbitmq.com/download.html），选择 [Binary build](https://www.rabbitmq.com/install-windows-manual.html)方式下载
 
-![1552978044310](images/1552978044310.png)
+![1552978044310](./images/1552978044310.png)
 
 
 
@@ -123,7 +123,7 @@ Eshell V10.3  (abort with ^G)
 
 （2）点击下载链接下载即可
 
-![1552978120168](images/1552978120168.png)
+![1552978120168](./images/1552978120168.png)
 
 
 
@@ -133,7 +133,7 @@ Eshell V10.3  (abort with ^G)
 
 
 
-![1552979775086](images/1552979775086.png)
+![1552979775086](./images/1552979775086.png)
 
 
 
@@ -232,7 +232,7 @@ rabbitmq-plugins enable rabbitmq_management
 
 
 
-![1552990596588](images/1552990596588.png)
+![1552990596588](./images/1552990596588.png)
 
 
 
@@ -242,7 +242,7 @@ rabbitmq-plugins enable rabbitmq_management
 
 在用户管理界面（Admin -> Users -> All users）可以看到用户列表，还可以添加用户、修改用户
 
-![1571036587892](images/1571036587892.png)
+![1571036587892](./images/1571036587892.png)
 
 可以看到只有一个guest用户
 
@@ -254,13 +254,13 @@ rabbitmq-plugins enable rabbitmq_management
 
 下面我们添加一个root用户
 
-![1571036781272](images/1571036781272.png)
+![1571036781272](./images/1571036781272.png)
 
 
 
 ### 4.2 设置权限
 
-![1571036912135](images/1571036912135.png)
+![1571036912135](./images/1571036912135.png)
 
 
 

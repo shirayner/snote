@@ -31,7 +31,7 @@ ANACONDA_HOME=Anaconda安装目录
 Path=%ANACONDA_HOME%;%ANACONDA_HOME%\Library\bin;%ANACONDA_HOME%\Scripts;
 ```
 
-![image-20210512230140818](images/image-20210512230140818.png)
+![image-20210512230140818](./images/image-20210512230140818.png)
 
 注意：环境变量要拆开，新建多条，若只新建一个的话，则会当做一个字符串：
 
@@ -41,7 +41,7 @@ C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\Wind
 
 
 
-![image-20210512230247993](images/image-20210512230247993.png)
+![image-20210512230247993](./images/image-20210512230247993.png)
 
 验证：
 
@@ -63,7 +63,7 @@ python -v
 
 直接搜索Python然后安装即可
 
-![image-20210513105113377](images/image-20210513105113377.png)
+![image-20210513105113377](./images/image-20210513105113377.png)
 
 
 

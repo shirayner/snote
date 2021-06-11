@@ -922,7 +922,7 @@ http = new HttpSecurity(objectPostProcessor, authenticationBuilder,
 
 同理， 设置 HttpSecurity 的默认配置时的其他操作也是使用同样的方法加入了一批 Filter 的。
 
-![image-20201217141438983](images/image-20201217141438983.png)
+![image-20201217141438983](./images/image-20201217141438983.png)
 
 
 
@@ -1156,7 +1156,7 @@ final class FilterComparator implements Comparator<Filter>, Serializable {
 
 可以看到项目中自定义配置的 WebSecurityConfigurerAdapter 一共产生如下 12 个 Filter
 
-![image-20201217142555972](images/image-20201217142555972.png)
+![image-20201217142555972](./images/image-20201217142555972.png)
 
 
 

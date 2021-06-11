@@ -77,7 +77,7 @@ cmd startup.cmd
 
 然后浏览器访问 http://localhost:8848/nacos ，用户名密码：`nacos/nacos`
 
-![image-20200613000505502](images/image-20200613000505502.png)
+![image-20200613000505502](./images/image-20200613000505502.png)
 
 
 
@@ -85,7 +85,7 @@ cmd startup.cmd
 
 
 
-![echo service](images/9160432783d24706d18f0588f8e2bb22.png)
+![echo service](./images/9160432783d24706d18f0588f8e2bb22.png)
 
 
 
@@ -341,11 +341,11 @@ public class ConsumerController {
 
 
 
-![image-20200614124031826](images/image-20200614124031826.png)
+![image-20200614124031826](./images/image-20200614124031826.png)
 
 然后浏览器访问服务消费者，可以看到打印出来服务提供者的端口
 
-![image-20200614124124666](images/image-20200614124124666.png)
+![image-20200614124124666](./images/image-20200614124124666.png)
 
 
 
@@ -371,11 +371,11 @@ nacos作为一个统一的配置中心，具备如下功能：
 
 配置管理 -> 配置列表 -> 新建配置
 
-![image-20200614130059737](images/image-20200614130059737.png)
+![image-20200614130059737](./images/image-20200614130059737.png)
 
 
 
-![image-20200614140444907](images/image-20200614140444907.png)
+![image-20200614140444907](./images/image-20200614140444907.png)
 
 
 
@@ -532,7 +532,7 @@ public class ConfigController {
 
 启动`NacosConfigApplication`，浏览器访问  http://localhost:18083/config/get ，出现下图：
 
-![image-20200614141039713](images/image-20200614141039713.png)
+![image-20200614141039713](./images/image-20200614141039713.png)
 
 
 
@@ -548,13 +548,13 @@ public class ConfigController {
 
 （1）创建命名空间
 
-![image-20200614142340524](images/image-20200614142340524.png)
+![image-20200614142340524](./images/image-20200614142340524.png)
 
 
 
 现在切换到配置列表，可以看到有四个命名空间
 
-![image-20200614142643258](images/image-20200614142643258.png)
+![image-20200614142643258](./images/image-20200614142643258.png)
 
 
 
@@ -566,7 +566,7 @@ public class ConfigController {
 
 1> 选中 public 命名空间下的配置
 
-![image-20200614143624422](images/image-20200614143624422.png)
+![image-20200614143624422](./images/image-20200614143624422.png)
 
 
 
@@ -574,11 +574,11 @@ public class ConfigController {
 
 2> 然后克隆到 dev 命名空间下
 
-![image-20200614143725566](images/image-20200614143725566.png)
+![image-20200614143725566](./images/image-20200614143725566.png)
 
 
 
-![image-20200614143837041](images/image-20200614143837041.png)
+![image-20200614143837041](./images/image-20200614143837041.png)
 
 
 
@@ -596,7 +596,7 @@ namespace的值为上图 dev 旁的值
 
 （4）重启`NacosConfigApplication`，浏览器访问  http://localhost:18083/config/get ，出现下图（会发现yml格式的配置不会生效，而修改为 nacos-config.properties 格式才会生效）：
 
-![image-20200614141039713](images/image-20200614141039713.png)
+![image-20200614141039713](./images/image-20200614141039713.png)
 
 
 
@@ -610,7 +610,7 @@ namespace的值为上图 dev 旁的值
 
 可回滚到某个历史版本
 
-![image-20200614151142093](images/image-20200614151142093.png)
+![image-20200614151142093](./images/image-20200614151142093.png)
 
 
 
@@ -663,7 +663,7 @@ public class ProviderController {
 
 测试效果：
 
-![1567306296896](images/1567306296896.png)
+![1567306296896](./images/1567306296896.png)
 
 
 

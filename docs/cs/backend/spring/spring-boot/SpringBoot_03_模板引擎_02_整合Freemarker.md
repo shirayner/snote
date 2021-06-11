@@ -292,7 +292,7 @@ public class UserController {
 
 会出现下图页面：
 
-> ![1567657416673](images/1567657416673.png)
+> ![1567657416673](./images/1567657416673.png)
 
 
 

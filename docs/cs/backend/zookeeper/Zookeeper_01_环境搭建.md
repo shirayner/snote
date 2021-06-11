@@ -355,25 +355,25 @@ Mode: follower
 
 #### 1.2 连接 ZooKeeper Server
 
-![连接 ZooKeeper Server](images/31.gif)
+![连接 ZooKeeper Server](./images/31.gif)
 
 
 
 #### 1.3 搜索 ZooKeeper 节点
 
-![搜索 ZooKeeper 节点](images/32.gif)
+![搜索 ZooKeeper 节点](./images/32.gif)
 
 
 
 #### 1.4 添加 ZooKeeper 节点
 
-![添加 ZooKeeper 节点](images/33.gif)
+![添加 ZooKeeper 节点](./images/33.gif)
 
 
 
 #### 1.5 删除 ZooKeeper 节点
 
-![删除 ZooKeeper 节点](images/34.gif)
+![删除 ZooKeeper 节点](./images/34.gif)
 
 
 

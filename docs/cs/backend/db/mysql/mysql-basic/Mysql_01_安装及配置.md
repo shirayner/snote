@@ -44,7 +44,7 @@ rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删�
 - a. 前往  mysql yum Repository 下载页面：https://dev.mysql.com/downloads/repo/yum/
 - b.复制相应的版本名
 
-![img ](images/repo-name-small.png)
+![img ](./images/repo-name-small.png)
 
 - c.根据版本名得到下载地址：`http://repo.mysql.com/版本名`
 
@@ -166,7 +166,7 @@ mysql 8 修改的密码必须符合密码校验规则:
 
 validate_password_policy 有以下取值： 
 
-![Mysql Password Validation](images/20180905161539422.png)
+![Mysql Password Validation](./images/20180905161539422.png)
 
 
 
@@ -234,13 +234,13 @@ mysql> set password for 'root'@'localhost' =password('root');
 
 
 
-![1568010832112](images/1568010832112.png)
+![1568010832112](./images/1568010832112.png)
 
 
 
 
 
-![1568010732362](images/1568010732362.png)
+![1568010732362](./images/1568010732362.png)
 
 
 
@@ -338,7 +338,7 @@ sudo service mysql restart
  sudo service mysqld status  
 ```
 
-![1548395963677](images/1548395963677.png)
+![1548395963677](./images/1548395963677.png)
 
 
 
@@ -462,13 +462,13 @@ mysql> flush privileges;
 
 前往[Mysql 官网](https://dev.mysql.com/downloads/mysql/)下载
 
-![1561531700013](images/1561531700013.png)
+![1561531700013](./images/1561531700013.png)
 
 
 
 下载之后解压即可
 
-![1561532568833](images/1561532568833.png)
+![1561532568833](./images/1561532568833.png)
 
 
 
@@ -540,7 +540,7 @@ mysqld -install
 
 
 
-![1561533071238](images/1561533071238.png)
+![1561533071238](./images/1561533071238.png)
 
 
 
@@ -558,7 +558,7 @@ mysqld --initialize --console
 
 然后Mysql会在控制台上打印一条root用户的临时密码：` VmokREa8Bl+q`
 
-![1561533601909](images/1561533601909.png)
+![1561533601909](./images/1561533601909.png)
 
 
 

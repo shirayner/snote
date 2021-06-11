@@ -154,7 +154,7 @@ afterTest
 
 SpringAOP 代理过程：
 
-![两种动态代理的区别](images/bVbocbT)
+![两种动态代理的区别](./images/bVbocbT)
 
 
 
@@ -269,7 +269,7 @@ class AspectJAfterAdvice extends AbstractAspectJAdvice implements MethodIntercep
 
 
 
-![image-20200804093748201](images/image-20200804093748201.png)
+![image-20200804093748201](./images/image-20200804093748201.png)
 
 
 
@@ -279,7 +279,7 @@ class AspectJAfterAdvice extends AbstractAspectJAdvice implements MethodIntercep
 
 
 
-![image-20200804094055056](images/image-20200804094055056.png)
+![image-20200804094055056](./images/image-20200804094055056.png)
 
 
 

@@ -173,7 +173,7 @@ public class AppConfig {
 
 Spring Boot 的 CacheManager 的自动配置放置在 `org.springframework.boot.autoconfigure.cache` 包中，如下图：
 
-![1557743759448](images/1557743759448.png)
+![1557743759448](./images/1557743759448.png)
 
 
 

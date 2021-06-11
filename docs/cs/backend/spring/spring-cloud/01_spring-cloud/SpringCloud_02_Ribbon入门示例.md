@@ -261,7 +261,7 @@ public class HelloRibbonController {
 
 （1）注册中心 EurekaServer-8761
 
-![1558520594730](images/1558520594730.png)
+![1558520594730](./images/1558520594730.png)
 
 
 
@@ -269,13 +269,13 @@ public class HelloRibbonController {
 
 这里我们启动三个  EurekaClient，对应的端口分别为：8762、8763、8764
 
-![1558520704231](images/1558520704231.png)
+![1558520704231](./images/1558520704231.png)
 
 
 
 （4）服务消费者 ConsumerRibbon
 
-![1558520771656](images/1558520771656.png)
+![1558520771656](./images/1558520771656.png)
 
 
 
@@ -287,7 +287,7 @@ public class HelloRibbonController {
 
 会发现 eureka-client 有三个副本，下面消费者将使用Ribbon去轮询这三个服务提供者
 
-![1558520947264](images/1558520947264.png)
+![1558520947264](./images/1558520947264.png)
 
 
 
@@ -299,13 +299,13 @@ public class HelloRibbonController {
 
 
 
-![1558521341908](images/1558521341908.png)
+![1558521341908](./images/1558521341908.png)
 
 
 
 多次请求，会发现  eureka-client  服务被轮询了
 
-![1558521415165](images/1558521415165.png)
+![1558521415165](./images/1558521415165.png)
 
 
 

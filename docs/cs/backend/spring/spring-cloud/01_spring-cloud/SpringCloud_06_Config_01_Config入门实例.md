@@ -91,7 +91,7 @@ dependencies {
 
 创建一个名为 spring-cloud-config-repository 的仓库用来存放配置文件，并在仓库中创建目录 v1，然后在v1目录下创建prod、dev、test环境的配置文件
 
-![1559489134751](images/1559489134751.png)
+![1559489134751](./images/1559489134751.png)
 
 配置文件中定义了一个属性（三个环境的配置信息稍作区别即可）
 
@@ -192,7 +192,7 @@ public class SpringCloud06Config01ConfigserverGitApplication {
 
 
 
-![1559489907832](images/1559489907832.png)
+![1559489907832](./images/1559489907832.png)
 
 
 
@@ -374,7 +374,7 @@ public class ConfigClientController {
 
 
 
-![1559490778781](images/1559490778781.png)
+![1559490778781](./images/1559490778781.png)
 
 
 

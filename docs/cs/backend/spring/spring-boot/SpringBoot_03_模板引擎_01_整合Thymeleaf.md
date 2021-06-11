@@ -134,7 +134,7 @@ public class ThymeleafProperties {
 
 关于默认配置也可在`spring-boot-autoconfigure`工程下的的`spring-configuration-metadata.json`文件中查看，如下图：
 
-![1557409472941](images/1557409472941.png)
+![1557409472941](./images/1557409472941.png)
 
 
 
@@ -326,7 +326,7 @@ public class UserController {
 
 会出现下图页面：
 
-> ![1557209680151](images/1557209680151.png)
+> ![1557209680151](./images/1557209680151.png)
 
 
 

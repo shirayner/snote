@@ -133,7 +133,7 @@ def "pushing an element on the stack"() {
 
 Block 与特征方法的概念阶段映射关系如下：
 
-![块2相](images/Blocks2Phases.png)
+![块2相](./images/Blocks2Phases.png)
 
 块将方法划分为不同的部分，共有6种块：
 

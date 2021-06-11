@@ -16,7 +16,7 @@
 
 
 
-![img](images/vi-vim-cheat-sheet-sch.gif)
+![img](./images/vi-vim-cheat-sheet-sch.gif)
 
 
 
@@ -24,7 +24,7 @@
 
 ## 2.模式
 
-![img](images/vim-vi-workmodel.png)
+![img](./images/vim-vi-workmodel.png)
 
 
 

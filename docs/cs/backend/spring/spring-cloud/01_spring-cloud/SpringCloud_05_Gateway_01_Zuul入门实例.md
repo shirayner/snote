@@ -182,7 +182,7 @@ public class SpringCloud05GatewayZuulApplication {
 
 
 
-![1559046776203](images/1559046776203.png)
+![1559046776203](./images/1559046776203.png)
 
 如上图，显示提供服务的是 8762 端口的 eureka-client
 

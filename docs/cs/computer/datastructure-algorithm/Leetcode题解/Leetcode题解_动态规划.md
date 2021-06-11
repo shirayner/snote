@@ -22,7 +22,7 @@
 
 第 i 个楼梯可以从第 i-1 和 i-2 个楼梯再走一步到达，走到第 i 个楼梯的方法数为走到第 i-1 和第 i-2 个楼梯的方法数之和。
 
-[![img](images/14fe1e71-8518-458f-a220-116003061a83.png)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/14fe1e71-8518-458f-a220-116003061a83.png)
+[![img](./images/14fe1e71-8518-458f-a220-116003061a83.png)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/14fe1e71-8518-458f-a220-116003061a83.png)
 
 
 
@@ -55,7 +55,7 @@ public int climbStairs(int n) {
 
 由于不能抢劫邻近住户，如果抢劫了第 i -1 个住户，那么就不能再抢劫第 i 个住户，所以
 
-[![img](images/2de794ca-aa7b-48f3-a556-a0e2708cb976.jpg)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/2de794ca-aa7b-48f3-a556-a0e2708cb976.jpg)
+[![img](./images/2de794ca-aa7b-48f3-a556-a0e2708cb976.jpg)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/2de794ca-aa7b-48f3-a556-a0e2708cb976.jpg)
 
 
 
@@ -111,7 +111,7 @@ private int rob(int[] nums, int first, int last) {
 
 综上所述，错误装信数量方式数量为：
 
-[![img](images/da1f96b9-fd4d-44ca-8925-fb14c5733388.png)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/da1f96b9-fd4d-44ca-8925-fb14c5733388.png)
+[![img](./images/da1f96b9-fd4d-44ca-8925-fb14c5733388.png)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/da1f96b9-fd4d-44ca-8925-fb14c5733388.png)
 
 
 
@@ -123,7 +123,7 @@ private int rob(int[] nums, int first, int last) {
 
 第 i 年成熟的牛的数量为：
 
-[![img](images/879814ee-48b5-4bcb-86f5-dcc400cb81ad.png)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/879814ee-48b5-4bcb-86f5-dcc400cb81ad.png)
+[![img](./images/879814ee-48b5-4bcb-86f5-dcc400cb81ad.png)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/879814ee-48b5-4bcb-86f5-dcc400cb81ad.png)
 
 
 
@@ -175,7 +175,7 @@ public int minPathSum(int[][] grid) {
 
 题目描述：统计从矩阵左上角到右下角的路径总数，每次只能向右或者向下移动。
 
-[![img](images/dc82f0f3-c1d4-4ac8-90ac-d5b32a9bd75a.jpg)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/dc82f0f3-c1d4-4ac8-90ac-d5b32a9bd75a.jpg)
+[![img](./images/dc82f0f3-c1d4-4ac8-90ac-d5b32a9bd75a.jpg)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/dc82f0f3-c1d4-4ac8-90ac-d5b32a9bd75a.jpg)
 
 
 
@@ -406,7 +406,7 @@ public int numDecodings(String s) {
 
 因为在求 dp[n] 时可能无法找到一个满足条件的递增子序列，此时 {Sn} 就构成了递增子序列，需要对前面的求解方程做修改，令 dp[n] 最小为 1，即：
 
-[![img](images/ee994da4-0fc7-443d-ac56-c08caf00a204.jpg)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/ee994da4-0fc7-443d-ac56-c08caf00a204.jpg)
+[![img](./images/ee994da4-0fc7-443d-ac56-c08caf00a204.jpg)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/ee994da4-0fc7-443d-ac56-c08caf00a204.jpg)
 
 
 
@@ -579,7 +579,7 @@ public int wiggleMaxLength(int[] nums) {
 
 综上，最长公共子序列的状态转移方程为：
 
-[![img](images/ecd89a22-c075-4716-8423-e0ba89230e9a.jpg)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/ecd89a22-c075-4716-8423-e0ba89230e9a.jpg)
+[![img](./images/ecd89a22-c075-4716-8423-e0ba89230e9a.jpg)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/ecd89a22-c075-4716-8423-e0ba89230e9a.jpg)
 
 
 
@@ -619,7 +619,7 @@ public int lengthOfLCS(int[] nums1, int[] nums2) {
 
 第 i 件物品可添加也可以不添加，取决于哪种情况下最大价值更大。因此，0-1 背包的状态转移方程为：
 
-[![img](images/8cb2be66-3d47-41ba-b55b-319fc68940d4.png)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/8cb2be66-3d47-41ba-b55b-319fc68940d4.png)
+[![img](./images/8cb2be66-3d47-41ba-b55b-319fc68940d4.png)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/8cb2be66-3d47-41ba-b55b-319fc68940d4.png)
 
 
 
@@ -648,7 +648,7 @@ public int knapsack(int W, int N, int[] weights, int[] values) {
 
 在程序实现时可以对 0-1 背包做优化。观察状态转移方程可以知道，前 i 件物品的状态仅与前 i-1 件物品的状态有关，因此可以将 dp 定义为一维数组，其中 dp[j] 既可以表示 dp[i-1][j] 也可以表示 dp[i][j]。此时，
 
-[![img](images/9ae89f16-7905-4a6f-88a2-874b4cac91f4.jpg)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/9ae89f16-7905-4a6f-88a2-874b4cac91f4.jpg)
+[![img](./images/9ae89f16-7905-4a6f-88a2-874b4cac91f4.jpg)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/9ae89f16-7905-4a6f-88a2-874b4cac91f4.jpg)
 
 
 
@@ -1011,7 +1011,7 @@ public int combinationSum4(int[] nums, int target) {
 
 题目描述：交易之后需要有一天的冷却时间。
 
-[![img](images/ffd96b99-8009-487c-8e98-11c9d44ef14f.png)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/ffd96b99-8009-487c-8e98-11c9d44ef14f.png)
+[![img](./images/ffd96b99-8009-487c-8e98-11c9d44ef14f.png)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/ffd96b99-8009-487c-8e98-11c9d44ef14f.png)
 
 
 
@@ -1056,7 +1056,7 @@ The total profit is ((8 - 1) - 2) + ((9 - 4) - 2) = 8.
 
 题目描述：每交易一次，都要支付一定的费用。
 
-[![img](images/1e2c588c-72b7-445e-aacb-d55dc8a88c29.png)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/1e2c588c-72b7-445e-aacb-d55dc8a88c29.png)
+[![img](./images/1e2c588c-72b7-445e-aacb-d55dc8a88c29.png)](https://github.com/CyC2018/CS-Notes/blob/master/notes/pics/1e2c588c-72b7-445e-aacb-d55dc8a88c29.png)
 
 
 

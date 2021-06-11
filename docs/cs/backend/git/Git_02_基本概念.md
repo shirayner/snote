@@ -10,7 +10,7 @@
 
 我们打开一个git仓库目录
 
-![1561359706370](images/1561359706370.png)
+![1561359706370](./images/1561359706370.png)
 
 
 
@@ -38,7 +38,7 @@
 
 如下图：
 
-![1561359958020](images/1561359958020.png)
+![1561359958020](./images/1561359958020.png)
 
 
 
@@ -79,7 +79,7 @@
 
 一个blob通常用来**存储文件的内容**.
 
-![img](images/object-blob.png)
+![img](./images/object-blob.png)
 
 
 
@@ -106,7 +106,7 @@ $ git show 6ff87c4664
 
 
 
-![img](images/object-tree.png)
+![img](./images/object-tree.png)
 
 
 
@@ -137,7 +137,7 @@ $ git ls-tree fb3a8bdd0ce
 
 
 
-![img](images/object-commit.png)
+![img](./images/object-commit.png)
 
 
 
@@ -174,7 +174,7 @@ committer Junio C Hamano <gitster@pobox.com> 1187591163 -0700
 
 
 
-![img](images/object-tag.png)
+![img](./images/object-tag.png)
 
 
 
@@ -227,7 +227,7 @@ $>tree
 
 
 
-![img](images/objects-example.png)
+![img](./images/objects-example.png)
 
 
 
@@ -253,7 +253,7 @@ Git有如下工作区域：
 
 
 
-![img](images/bg2015120901-1561357642674.png)
+![img](./images/bg2015120901-1561357642674.png)
 
 
 

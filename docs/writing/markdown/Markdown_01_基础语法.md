@@ -27,7 +27,7 @@
 
 效果如下：
 
-![1553137609792](images/1553137609792.png)
+![1553137609792](./images/1553137609792.png)
 
 ## 2.区块引用
 
@@ -495,17 +495,17 @@ System.out.println(mutiCodeBlock);
 
 ```markdown
 有标题
-![markDdown标题](images/1553137609792.png “markDdown 鼠标悬浮的标题哦”)
+![markDdown标题](./images/1553137609792.png “markDdown 鼠标悬浮的标题哦”)
 
 没标题
-![markDdown标题](images/1553137609792.png)
+![markDdown标题](./images/1553137609792.png)
 ```
 
 有标题
-![markDdown标题](images/1553137609792.png "markDdown鼠标悬浮的标题哦")
+![markDdown标题](./images/1553137609792.png "markDdown鼠标悬浮的标题哦")
 
 没标题
-![markDdown标题](images/1553137609792.png)
+![markDdown标题](./images/1553137609792.png)
 
 ### 2.2 参考式
 

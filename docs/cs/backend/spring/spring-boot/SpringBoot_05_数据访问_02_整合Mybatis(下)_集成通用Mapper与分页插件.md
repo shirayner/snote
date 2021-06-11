@@ -76,11 +76,11 @@ dependencies {
 
 （1）我们先来看下`mybatis-spring-boot-starter`中依赖了哪些jar包
 
-![1557472880144](images/1557472880144.png)
+![1557472880144](./images/1557472880144.png)
 
 （2）再看`tk.mybatis:mapper-spring-boot-starter`中依赖了哪些jar包
 
-![1557473069588](images/1557473069588.png)
+![1557473069588](./images/1557473069588.png)
 
 我们发现`tk.mybatis:mapper-spring-boot-starter`中已经有了`mybatis-spring-boot-starter`所依赖的jar包了，除了一个自动化配置的jar包，但这些自动化配置应该包括在通用mapper的自动化配置jar包中，因此没必要依赖`mybatis-spring-boot-starter`
 

@@ -27,7 +27,7 @@ SpringBoot的热部署有如下方式：
 
 如下图：
 
-![1553676043014](images/1553676043014.png)
+![1553676043014](./images/1553676043014.png)
 
 
 
@@ -35,7 +35,7 @@ SpringBoot的热部署有如下方式：
 
 
 
-![1553676368915](images/1553676368915.png)
+![1553676368915](./images/1553676368915.png)
 
 
 
@@ -43,7 +43,7 @@ SpringBoot的热部署有如下方式：
 
 当有文件更新时，点击下图按钮
 
-![1553676436608](images/1553676436608.png)
+![1553676436608](./images/1553676436608.png)
 
 
 
@@ -103,7 +103,7 @@ SpringBoot的热部署有如下方式：
 
 依次点击  `File -> Settings -> Build，Execution，Deployment -> Compiler -> 勾选‘Build project automatically’ `  ，如下图
 
-![1553673791212](images/1553673791212.png)
+![1553673791212](./images/1553673791212.png)
 
 
 
@@ -111,13 +111,13 @@ SpringBoot的热部署有如下方式：
 
 （1）使用快捷键`Shift+Ctrl+Alt+/`，然后选择Registry
 
-![1553674010951](images/1553674010951.png)
+![1553674010951](./images/1553674010951.png)
 
 
 
 （2）勾选 `compiler.automake.allow.when.app.running`，如下图
 
-![1553674103818](images/1553674103818.png)
+![1553674103818](./images/1553674103818.png)
 
 
 

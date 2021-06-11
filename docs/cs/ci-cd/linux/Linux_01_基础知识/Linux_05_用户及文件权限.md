@@ -570,7 +570,7 @@ lrwxrwxrwx. 1 ray ray   8 Jan  9 20:05 test2_link -> test2.sh
 
 
 
-![1548222119496](images/1548222119496.png)
+![1548222119496](./images/1548222119496.png)
 
 
 

@@ -31,7 +31,7 @@
 
 ### 1.1 层次结构图
 
-![1561820104687](images/1561820104687.png)
+![1561820104687](./images/1561820104687.png)
 
 
 
@@ -39,7 +39,7 @@
 
 
 
-![DefaultListableBeanFactory](images/DefaultListableBeanFactory.png)
+![DefaultListableBeanFactory](./images/DefaultListableBeanFactory.png)
 
 
 

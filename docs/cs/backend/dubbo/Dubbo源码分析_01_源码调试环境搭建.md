@@ -83,7 +83,7 @@ docker start zk
 
 找到 `dubbo-demo`模块下的 `dubbo-demo-api-provider` 工程，启动服务提供者
 
-![image-20200809205939274](images/image-20200809205939274.png)
+![image-20200809205939274](./images/image-20200809205939274.png)
 
 
 
@@ -93,7 +93,7 @@ docker start zk
 
 找到 `dubbo-demo`模块下的 `dubbo-demo-api-consumer` 工程，启动服务消费者并进行 RPC 调用
 
-![image-20200809210249378](images/image-20200809210249378.png)
+![image-20200809210249378](./images/image-20200809210249378.png)
 
 
 

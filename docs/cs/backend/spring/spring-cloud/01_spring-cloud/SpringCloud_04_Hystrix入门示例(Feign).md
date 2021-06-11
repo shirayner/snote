@@ -65,7 +65,7 @@
 
 
 
-![熔断器模式](images/2158565585-578b3fecb5bcd_articlex.png)
+![熔断器模式](./images/2158565585-578b3fecb5bcd_articlex.png)
 
 
 
@@ -447,13 +447,13 @@ public class UserController {
 
 （1）正常情况：当  id> 0时，正常返回如下信息
 
-![1558958099187](images/1558958099187.png)
+![1558958099187](./images/1558958099187.png)
 
 
 
 （2）异常情况：当 id<=0时，eureka-client 服务抛出异常，被降级处理
 
-![1558958220836](images/1558958220836.png)
+![1558958220836](./images/1558958220836.png)
 
 
 

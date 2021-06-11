@@ -31,7 +31,7 @@
 
 假设有如下提交历史：
 
-![ ](images/basic-branching-6.png)
+![ ](./images/basic-branching-6.png)
 
 
 
@@ -48,7 +48,7 @@ git merge iss53
 
 最后形成以下结果，实现提交的合并
 
-![ ](images/basic-merging-2.png)
+![ ](./images/basic-merging-2.png)
 
 
 

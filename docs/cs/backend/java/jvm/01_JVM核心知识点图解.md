@@ -26,7 +26,7 @@ tags:
 
 在这里记录下关于 JVM 的知识的来源：
 
-> - [《深入理解 Java 虚拟机》](https://item.jd.com/11252778.html)：学习 JVM 的神书，JVM 的必看书籍
+> - [《深入理解 Java 虚拟机》](https://item.jd.com/11252778.html)：学习 JVM 的神书，JVM 的必看书籍，本文的总结也是基于此书的
 > - [The Java® Virtual Machine Specification](https://docs.oracle.com/javase/specs/jvms/se13/html/index.html)：Oracle 官方 Jvm 虚拟机规范，最权威，建议在读完《深入理解 Java 虚拟机》这本书之后再阅读
 
 ## 一、JVM 的运行时数据区
@@ -434,9 +434,13 @@ HotSpot 虚拟机就是使用此种方式，使用直接指针访问方式的最
 
 因此是在新生代 Eden 区
 
-### 2.Class 对象就是类元数据吗
+### 2.Class 对象位于方法区还是堆？
 
-群友说就是类元数据，
+> - [JDK 1.8 下的 java.lang.Class 对象和 static 成员变量在堆还是方法区？](https://blog.csdn.net/Xu_JL1997/article/details/89433916)
+
+`JDK 1.8` 中，static 成员变量位于`java.lang.Class` 对象内，而`java.lang.Class` 对象都位于堆（Heap）中。
+
+
 
 ### 3. major gc 和 full gc 有什么区别？
 
@@ -445,6 +449,10 @@ HotSpot 虚拟机就是使用此种方式，使用直接指针访问方式的最
 我们应该关注于当前 GC 是否 stop the world，而并不是字面意思
 
 ## 参考资料
+
+### 书籍参考
+
+> - [《深入理解 Java 虚拟机》](https://item.jd.com/11252778.html)
 
 ### 画图参考
 

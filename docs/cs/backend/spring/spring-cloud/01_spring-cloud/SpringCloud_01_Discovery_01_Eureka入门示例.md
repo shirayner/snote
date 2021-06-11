@@ -18,7 +18,7 @@ SpringCloud 基于SpringBoot 开发，**提供了一套完整的微服务解决�
 
 SpringCloud 微服务组件列表
 
-![1558411003255](images/1558411003255.png)
+![1558411003255](./images/1558411003255.png)
 
 
 
@@ -56,7 +56,7 @@ artifact ='spring-cloud-seeds'
 
 
 
-![1543890638387 ](images/1543890638387.png)
+![1543890638387 ](./images/1543890638387.png)
 
 
 
@@ -66,7 +66,7 @@ artifact ='spring-cloud-seeds'
 
 ### 1.2 Project Metadata
 
-![1558412532412](images/1558412532412.png)
+![1558412532412](./images/1558412532412.png)
 
 
 
@@ -78,7 +78,7 @@ artifact ='spring-cloud-seeds'
 
 
 
-![1558412694346](images/1558412694346.png)
+![1558412694346](./images/1558412694346.png)
 
 
 
@@ -92,7 +92,7 @@ artifact ='spring-cloud-seeds'
 
 
 
-![1558412801345](images/1558412801345.png)
+![1558412801345](./images/1558412801345.png)
 
 
 
@@ -102,7 +102,7 @@ artifact ='spring-cloud-seeds'
 
 直接点击OK，选择默认推荐的gradle wrapper
 
-![1558412872141](images/1558412872141.png)
+![1558412872141](./images/1558412872141.png)
 
 
 
@@ -202,7 +202,7 @@ artifact ='spring-cloud-01-discovery-01-eureka-server'
 
 子模块依赖如下：
 
-![1558413675829](images/1558413675829.png)
+![1558413675829](./images/1558413675829.png)
 
 ## 2.引入依赖
 
@@ -312,7 +312,7 @@ public class SpringCloud01Discovery01EurekaServerApplication {
 
 如下图所示，可以看到还没有发现任何服务。
 
-![Eureka-localhost](images/Eureka-localhost.png)
+![Eureka-localhost](./images/Eureka-localhost.png)
 
 
 
@@ -547,7 +547,7 @@ public class UserController {
 
 如下图所示，在注册中心的服务列表已经可以看到本服务了
 
-![eureka-client-localhost](images/eureka-client-localhost.png)
+![eureka-client-localhost](./images/eureka-client-localhost.png)
 
 
 
@@ -555,7 +555,7 @@ public class UserController {
 
 > http://localhost:8762/
 
-![1558495104857](images/1558495104857.png)
+![1558495104857](./images/1558495104857.png)
 
 
 

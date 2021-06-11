@@ -36,7 +36,7 @@ fork一份Spring Framework源码
 
 方式一： 可以直接去 github fork
 
-![1563942183877](images/1563942183877.png)
+![1563942183877](./images/1563942183877.png)
 
 
 
@@ -44,13 +44,13 @@ fork一份Spring Framework源码
 
 方式二： 去[码云](https://gitee.com/) ->  新建仓库 -> 导入已有仓库
 
-![image-20200520225753946](images/image-20200520225753946.png)
+![image-20200520225753946](./images/image-20200520225753946.png)
 
 然后填写spring 仓库地址： https://github.com/spring-projects/spring-framework ， 然后点击创建即可
 
 
 
-![image-20200520225900676](images/image-20200520225900676.png)
+![image-20200520225900676](./images/image-20200520225900676.png)
 
 推荐方式二，下载速度快得很多很多很多
 
@@ -60,7 +60,7 @@ fork一份Spring Framework源码
 
 fork完成后，在自己的仓库列表会出现刚刚fork的 spring-framework 项目，将其clone到本地。
 
-![image-20200520231016173](images/image-20200520231016173.png)
+![image-20200520231016173](./images/image-20200520231016173.png)
 
 
 
@@ -76,7 +76,7 @@ git clone git@gitee.com:shirayner/spring-framework.git
 
 
 
-![image-20200520231104337](images/image-20200520231104337.png)
+![image-20200520231104337](./images/image-20200520231104337.png)
 
 可以看到Spring目前最新的分支是 5.2.x
 
@@ -92,7 +92,7 @@ git checkout -b spring-sourcecode-analysis
 
 
 
-![image-20200521211523867](images/image-20200521211523867.png)
+![image-20200521211523867](./images/image-20200521211523867.png)
 
 
 
@@ -120,13 +120,13 @@ Idea中依次选择 `File -> Open...`，然后选择 spring-framework，点击ok
 
 
 
-![1563943342892](images/1563943342892.png)
+![1563943342892](./images/1563943342892.png)
 
 
 
 这一步直接点击ok即可。
 
-![1563943428926](images/1563943428926.png)
+![1563943428926](./images/1563943428926.png)
 
 
 
@@ -150,13 +150,13 @@ Idea中依次选择 `File -> Open...`，然后选择 spring-framework，点击ok
 
 这里我们选择创建一个 Gradle 工程
 
-![image-20200520222917271](images/image-20200520222917271.png)
+![image-20200520222917271](./images/image-20200520222917271.png)
 
 
 
 （2）然后输入项目坐标 `my-test`
 
-![image-20200521213909524](images/image-20200521213909524.png)
+![image-20200521213909524](./images/image-20200521213909524.png)
 
 
 

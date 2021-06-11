@@ -49,7 +49,7 @@ Sentinel 具有以下特征:
 
 Sentinel 的主要特性：
 
-![Sentinel-features-overview](images/50505538-2c484880-0aaf-11e9-9ffc-cbaaef20be2b.png)
+![Sentinel-features-overview](./images/50505538-2c484880-0aaf-11e9-9ffc-cbaaef20be2b.png)
 
 
 
@@ -94,7 +94,7 @@ java -jar sentinel-dashboard-1.8.1.jar
 
 
 
-![image-20210309162117455](images/image-20210309162117455.png)
+![image-20210309162117455](./images/image-20210309162117455.png)
 
 
 
@@ -297,7 +297,7 @@ public class RateLimitController {
 
 （3）在Sentinel控制台根据`@SentinelResource`注解的value值来配置流控规则
 
-![img](images/1460000021377374)
+![img](./images/1460000021377374)
 
 
 
@@ -313,7 +313,7 @@ public class RateLimitController {
 
 （1）在Sentinel控制台配置流控规则，使用访问的URL：
 
-![img](images/1460000021377375)
+![img](./images/1460000021377375)
 
 （2）多次访问该接口，会返回默认的限流处理结果：[http://localhost](http://localhost/):8401/rateLimit/byUrl
 

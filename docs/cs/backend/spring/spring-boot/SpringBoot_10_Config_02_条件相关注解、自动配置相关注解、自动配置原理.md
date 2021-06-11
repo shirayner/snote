@@ -352,11 +352,11 @@ public @interface AutoConfigurationPackage {
 
 而在` AutoConfigurationPackages.Registrar.class`主要就是注册了启动类所在包（当然包括子包）
 
-![1558279687737](images/1558279687737.png)
+![1558279687737](./images/1558279687737.png)
 
 
 
-![1558279733226](images/1558279733226.png)
+![1558279733226](./images/1558279733226.png)
 
 
 

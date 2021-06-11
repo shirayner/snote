@@ -18,7 +18,7 @@
 
 
 
-![1544771516166](images/1544771516166.png)
+![1544771516166](./images/1544771516166.png)
 
 
 
@@ -36,7 +36,7 @@
 
 
 
-![img](images/SpringMVC%E6%B5%81%E7%A8%8B%E5%9B%BE.png?lastModify=1545015684)
+![img](./images/SpringMVC%E6%B5%81%E7%A8%8B%E5%9B%BE.png?lastModify=1545015684)
 
 
 

@@ -1701,7 +1701,7 @@ ComponentRegistered事件触发:
 
 BeanDefiniton数据结构如下图:
 
-![BeanDefinition数据结构](images/BeanDefinition.jpg)
+![BeanDefinition数据结构](./images/BeanDefinition.jpg)
 
 ##### beans
 
@@ -1757,7 +1757,7 @@ http\://www.springframework.org/schema/cache=org.springframework.cache.config.Ca
 
 ##### NamespaceHandler继承体系
 
-![NamespaceHandler继承体系](images/NamespaceHandler.jpg)
+![NamespaceHandler继承体系](./images/NamespaceHandler.jpg)
 
 ##### init
 
@@ -1771,7 +1771,7 @@ resolve中调用了其init方法，此方法用以向NamespaceHandler对象注�
 
 BeanDefinition在BeanFactory中的主要数据结构如下图:
 
-![Beanfactory数据结构](images/Beanfactory_structure.jpg)
+![Beanfactory数据结构](./images/Beanfactory_structure.jpg)
 
 ### prepareBeanFactory
 
@@ -1793,7 +1793,7 @@ beanFactory.setBeanExpressionResolver(new 						 			StandardBeanExpressionResolv
 
 StandardBeanExpressionResolver对象内部有一个关键的成员: SpelExpressionParser,其整个类图:
 
-![ExpressionParser继承体系](images/ExpressionParser.jpg)
+![ExpressionParser继承体系](./images/ExpressionParser.jpg)
 
 这便是Spring3.0开始出现的Spel表达式的解释器。
 
@@ -1968,7 +1968,7 @@ getBeanFactoryPostProcessors获取的就是AbstractApplicationContext的成员be
 
 此接口用以支持Spring国际化。继承体系如下:
 
-![MessageSource继承体系](images/MessageSource.jpg)
+![MessageSource继承体系](./images/MessageSource.jpg)
 
 AbstractApplicationContext的initMessageSource()方法就是在BeanFactory中查找MessageSource的bean，如果配置了此bean，那么调用getBean方法完成其初始化并将其保存在AbstractApplicationContext内部messageSource成员变量中，用以处理ApplicationContext的getMessage调用，因为从继承体系上来看，ApplicationContext是MessageSource的子类，此处是委托模式的体现。如果没有配置此bean，那么初始化一个DelegatingMessageSource对象，此类是一个空实现，同样用以处理getMessage调用请求。
 
@@ -1982,13 +1982,13 @@ AbstractApplicationContext的initMessageSource()方法就是在BeanFactory中查
 
 java的所有事件对象一般都是java.util.EventObject的子类，Spring的整个继承体系如下:
 
-![EventObject继承体系](images/EventObject.jpg)
+![EventObject继承体系](./images/EventObject.jpg)
 
 #### 发布者
 
 ##### ApplicationEventPublisher
 
-![ApplicationEventPublisher继承体系](images/ApplicationEventPublisher.jpg)
+![ApplicationEventPublisher继承体系](./images/ApplicationEventPublisher.jpg)
 
 一目了然。
 
@@ -1996,13 +1996,13 @@ java的所有事件对象一般都是java.util.EventObject的子类，Spring的�
 
 ApplicationEventPublisher实际上正是将请求委托给ApplicationEventMulticaster来实现的。其继承体系:
 
-![ApplicationEventMulticaster继承体系](images/ApplicationEventMulticaster.jpg)
+![ApplicationEventMulticaster继承体系](./images/ApplicationEventMulticaster.jpg)
 
 #### 监听器
 
 所有的监听器是jdk EventListener的子类，这是一个mark接口。继承体系:
 
-![EventListener继承体系](images/EventListener.jpg)
+![EventListener继承体系](./images/EventListener.jpg)
 
 可以看出SmartApplicationListener和GenericApplicationListener是高度相似的，都提供了事件类型检测和顺序机制，而后者是从Spring4.2加入的，Spring官方文档推荐使用后者代替前者。
 
@@ -2452,7 +2452,7 @@ createBeanInstance的创建过程又分为以下几种情况:
 
     bean的初始化在此处又抽成了策略模式，类图:
 
-    ![InstantiationStrategy类图](images/InstantiationStrategy.jpg)
+    ![InstantiationStrategy类图](./images/InstantiationStrategy.jpg)
 
     instantiateUsingFactoryMethod部分源码:
 
@@ -2801,7 +2801,7 @@ scopes是一个LinkedHashMap<String, Scope>，可以调用 ConfigurableBeanFacto
 
 Scope接口继承体系:
 
-![Scope继承体系](images/Scope.jpg)
+![Scope继承体系](./images/Scope.jpg)
 
 根据socpe.get的注释，此方法如果找到了叫做beanName的bean，那么返回，如果没有，将调用ObjectFactory创建之。Scope的实现参考类图。
 

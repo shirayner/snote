@@ -500,7 +500,7 @@ public class UserController {
 
 
 
-![1557284361473](images/1557284361473.png)
+![1557284361473](./images/1557284361473.png)
 
 
 
@@ -619,7 +619,7 @@ public class User {
 
 Swagger提供了如下注解
 
-![1557243390424](images/1557243390424.png)
+![1557243390424](./images/1557243390424.png)
 
 这里我们只对常用注解进行说明
 
@@ -660,7 +660,7 @@ public class UserController {
 
 
 
-![1557284361473](images/1557284361473.png)
+![1557284361473](./images/1557284361473.png)
 
 
 
@@ -689,7 +689,7 @@ public class UserController {
 
 
 
-![1557289780743](images/1557289780743.png)
+![1557289780743](./images/1557289780743.png)
 
 
 
@@ -726,7 +726,7 @@ public User insert(@RequestBody User user) {
 
 
 
-![1557289827862](images/1557289827862.png)
+![1557289827862](./images/1557289827862.png)
 
 
 
@@ -814,7 +814,7 @@ public class User {
 
 
 
-![1557289875430](images/1557289875430.png)
+![1557289875430](./images/1557289875430.png)
 
 
 

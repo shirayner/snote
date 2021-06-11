@@ -8,7 +8,7 @@
 
 
 
-![img ](images/bg2015120901.png)
+![img ](./images/bg2015120901.png)
 
 
 

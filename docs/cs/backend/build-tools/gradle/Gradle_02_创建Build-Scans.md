@@ -8,7 +8,7 @@
 
 Build Scans 能提供非常丰富的项目构建信息，包括项目构建情况、耗时、依赖、插件等，如下图
 
-![build scan page](images/build_scan_page.png)
+![build scan page](./images/build_scan_page.png)
 
 
 

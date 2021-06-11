@@ -413,7 +413,7 @@ mysqldump -uray -p'Ray12345.' --default-character-set=utf8 --opt --extended-inse
 
 （2）手动锁表
 
-![img](images/95.png)
+![img](./images/95.png)
 
 
 

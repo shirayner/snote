@@ -99,7 +99,7 @@ dependencies {
 
 可以看到`spring-boot-starter-data-redis`中依赖了`lettuce`
 
-![1557501640554](images/1557501640554.png)
+![1557501640554](./images/1557501640554.png)
 
 
 

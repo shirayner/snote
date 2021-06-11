@@ -21,7 +21,7 @@ chrom 安装postman 插件：
 
 启用 Postman Interceptor ，并设置要拦截url的匹配规则
 
-![image-20200924114213547](images/image-20200924114213547.png)
+![image-20200924114213547](./images/image-20200924114213547.png)
 
 
 
@@ -29,11 +29,11 @@ chrom 安装postman 插件：
 
 接着运行 Postman Chrome App
 
-![image-20200924115333357](images/image-20200924115333357.png)
+![image-20200924115333357](./images/image-20200924115333357.png)
 
 然后打开 Interceptor 
 
-![image-20200924115459753](images/image-20200924115459753.png)
+![image-20200924115459753](./images/image-20200924115459753.png)
 
 
 

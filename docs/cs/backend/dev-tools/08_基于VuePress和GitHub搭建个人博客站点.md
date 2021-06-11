@@ -76,7 +76,7 @@ success [15:04:28] Build 4675e9 finished in 7196 ms!
 
 
 
-![image-20210428150505074](images/image-20210428150505074.png)
+![image-20210428150505074](./images/image-20210428150505074.png)
 
 
 
@@ -175,7 +175,7 @@ module.exports = {
 
 对于上述的配置，如果你运行起 dev server，你应该能看到一个页面，它包含一个页头，里面包含一个标题和一个搜索框。VuePress 内置了基于 headers 的搜索 —— 它会自动为所有页面的标题、`h2` 和 `h3` 构建起一个简单的搜索索引。
 
-![image-20210428173549365](images/image-20210428173549365.png)
+![image-20210428173549365](./images/image-20210428173549365.png)
 
 
 
@@ -254,7 +254,7 @@ module.exports = {
 
 导航栏显示效果如下：
 
-![image-20210428195005594](images/image-20210428195005594.png)
+![image-20210428195005594](./images/image-20210428195005594.png)
 
 
 
@@ -379,7 +379,7 @@ module.exports = {
 
 
 
-![image-20210429141305031](images/image-20210429141305031.png)
+![image-20210429141305031](./images/image-20210429141305031.png)
 
 
 
@@ -421,7 +421,7 @@ module.exports = {
 
 页面右下角会出现一只小猫：
 
-![image-20210429141331481](images/image-20210429141331481.png)
+![image-20210429141331481](./images/image-20210429141331481.png)
 
 
 
@@ -456,7 +456,7 @@ module.exports = {
 
 效果如下：
 
-![image-20210429143852304](images/image-20210429143852304.png)
+![image-20210429143852304](./images/image-20210429143852304.png)
 
 
 
@@ -628,7 +628,7 @@ module.exports = {
 
 
 
-![image-20210506111326182](images/image-20210506111326182.png)
+![image-20210506111326182](./images/image-20210506111326182.png)
 
 
 
