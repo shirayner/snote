@@ -50,6 +50,8 @@ PlantUML 是使用 Java 开发的，需要 Java 运行时环境
 
 > [https://github.com/qjebbs/vscode-plantuml](https://github.com/qjebbs/vscode-plantuml)
 
+
+
 （2）安装 **plantuml.jar**
 
 > [https://github.com/plantuml/plantuml](https://github.com/plantuml/plantuml)

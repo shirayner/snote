@@ -4,7 +4,22 @@
 
 
 
-## 一、推荐开源框架
+## 一、推荐博客
+
+> - [自然语言处理](https://chmx0929.gitbook.io/machine-learning/zi-ran-yu-yan-chu-li/zi-ran-yu-yan-chu-li)
+> - [自己动手做聊天机器人](https://wohugb.github.io/chatbot/)
+>
+> 
+
+
+
+
+
+
+
+
+
+## 二、推荐开源框架
 
 ### 1.Stanford CoreNLP
 
